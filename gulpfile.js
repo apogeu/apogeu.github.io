@@ -95,5 +95,7 @@ gulp.task('dist', ['images', 'minify', 'templates', 'uglify']);
 
 gulp.task('deploy', () => {
   return gulp.src(`${paths.dist}/**`)
-    .pipe(ghPages());
+    .pipe(ghPages({
+      branch: 'master',
+    }));
 });

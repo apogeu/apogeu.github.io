@@ -1,26 +1,13 @@
 extends ../_layouts/default
 
-block head
-    // Custom styles for this template
-    link(href='/assets/stylesheets/example.css', rel='stylesheet')
-
-block defer
-    script(src='/assets/javascripts/example.js')
-
 block content
-    .site-wrapper
+    .index.callout.large.text-center
 
-        .site-wrapper-inner
+        .row
+            img.index__logo(src="https://raw.githubusercontent.com/apogeu/apogeu-logo/master/apogeu.png")
 
-            .cover-container
+        .row
+            h2 A multi platform rails like framework made for Node.js.
 
-                include ../_includes/navbar
-
-                .inner.cover
-                    h1.cover-heading #home
-                    p.lead
-                        | Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
-                    p.lead
-                        a.btn.btn-lg.btn-default(href='#') Learn more
-                
-                include ../_includes/footer
+        .row
+            a(class="button large" href="/get-started") Get Started

@@ -1,9 +1,16 @@
-.masthead.clearfix
-    .inner
-        h3.masthead-brand
-            nav
-                ul.nav.masthead-nav
-                    li
-                        img(src='/assets/images/example.png')
-                    li
-                        a(href='/') Home
+ul(class="dropdown menu align-right" data-dropdown-menu)
+    li.float-left
+        a.menu-logo__link(href='/')
+            img.menu-logo__img(src="https://raw.githubusercontent.com/apogeu/apogeu-logo/master/apogeu-white.jpg")
+    li
+        a(href='#') Documentation
+        ul.menu
+            - var documentation = []
+            - documentation.push({ href: '/concepts', name: 'Concepts' })
+            - documentation.push({ href: '/structure', name: 'App structure' })
+            - documentation.push({ href: '/tutorials', name: 'Tutorials' })
+            each link in documentation
+                li
+                    a(href=`${ link.href }`) #{ link.name }
+    li
+        a(href='/get-started') Get Started

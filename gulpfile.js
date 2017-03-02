@@ -93,7 +93,7 @@ gulp.task('serve', ['watch', 'dist'], () => {
 
 gulp.task('dist', ['images', 'minify', 'templates', 'uglify']);
 
-gulp.task('deploy', () => {
+gulp.task('deploy', ['dist'], () => {
   return gulp.src(`${paths.dist}/**`)
     .pipe(ghPages({
       branch: 'master',

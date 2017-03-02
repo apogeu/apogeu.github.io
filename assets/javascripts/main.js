@@ -22,7 +22,7 @@
     var containerHeight = $container.outerHeight();
     var marginTop = windowHeight - footerHeight - menuHeight - containerHeight;
 
-    if (footerHeight < marginTop) {
+    if (containerHeight < marginTop) {
       $container.height(marginTop);
     }
   }

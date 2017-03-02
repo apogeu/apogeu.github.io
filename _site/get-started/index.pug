@@ -2,45 +2,49 @@ extends ../../_layouts/default
 
 block content
     .get-started
-        h1.text-center Get Started
+        .text-center
+            h1 Get Started
+            h4 A multi platform rails like framework made for Node.js.
 
         hr
 
-        .media-object
-            .media-object-section.thumb-section
-                .thumbnail
-                    img(src='https://nodejs.org/static/images/logo-light.svg')
-            .media-object-section.main-section
-                h3 New to Node?
-                p Before you continue, install the latest version of Node.js.
-                p Node.js® is a JavaScript runtime built on #[a(href='https://developers.google.com/v8') Chrome's V8 JavaScript engine]. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, #[a(href='https://www.npmjs.com') npm], is the largest ecosystem of open source libraries in the world.
-                a.button.large(href='https://nodejs.org') Go to Node.js
+        .row
+            .media-object
+                .media-object-section.thumb-section
+                    .thumbnail
+                        img(src='/assets/images/node-light.svg')
+                .media-object-section.main-section
+                    h3 New to Node?
+                    p Before you continue, install the latest version of Node.js.
+                    p Node.js® is a JavaScript runtime built on #[a(href='https://developers.google.com/v8') Chrome's V8 JavaScript engine]. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, #[a(href='https://www.npmjs.com') npm], is the largest ecosystem of open source libraries in the world.
+                    a.button.large(href='https://nodejs.org') Go to Node.js
 
         hr
 
-        .media-object
-            .media-object-section.thumb-section
-                .thumbnail
-                    img(src='https://raw.githubusercontent.com/apogeu/apogeu-logo/master/apogeu.png')
-            .media-object-section.main-section
-                h3 Install Apogeu
-                pre
-                    code.bash $ npm install apogeu -g
+        .row
+            .media-object
+                .media-object-section.thumb-section
+                    .thumbnail
+                        img(src='/assets/images/apogeu.png')
+                .media-object-section.main-section
+                    h3 Installing Apogeu
+                    pre
+                        code.bash $ npm install apogeu -g
 
-                h3 Create your app
+                    h3 Creating your app
 
-                p To generate a new app
-                pre
-                    code.bash $ apogeu new my-project
+                    p To generate a new app
+                    pre
+                        code.bash $ apogeu new my-project
 
-                p You should see:
-                pre
-                    code.bash info: my-project app created
+                    p You should see:
+                    pre
+                        code.bash info: my-project app created
 
-                p Now just start your new Apogee app:
-                pre
-                    code.bash
-                        | $ cd my-project
-                        | $ apogeu start
+                    p Now just start your new Apogee app:
+                    pre
+                        code.bash
+                            | $ cd my-project
+                            | $ apogeu start
 
-                p Now you can go to localhost:3000 to see your homepage.
+                    p Now you can go to #[a(href="http://localhost:3000") localhost:3000] to see your homepage.

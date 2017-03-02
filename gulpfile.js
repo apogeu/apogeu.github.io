@@ -37,7 +37,7 @@ gulp.task('clean:templates', () => {
 });
 
 gulp.task('images', ['clean:images'], () => {
-  return gulp.src(`${paths.images}/**`)
+  return gulp.src(`${paths.images}/*`)
     .pipe(imagemin())
     .pipe(gulp.dest(`${paths.dist}/${paths.images}`));
 });
@@ -68,7 +68,7 @@ gulp.task('uglify', ['clean:javascripts'], () => {
 });
 
 gulp.task('watch:images', () => {
-  return gulp.watch(`${paths.images}/**`, ['images']);
+  return gulp.watch(`${paths.images}/*`, ['images']);
 });
 
 gulp.task('watch:minify', () => {

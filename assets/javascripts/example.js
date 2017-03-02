@@ -1,1 +1,0 @@
-!function(n,i,t){"use strict";var o=function(){return{init:function(){console.log("quickness")}}}();o.init()}(window,document);

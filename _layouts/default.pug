@@ -1,5 +1,7 @@
 doctype html(lang='en')
 
+include ../_mixins/title
+
 head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -8,7 +10,9 @@ head
     meta(name='description', content='')
     meta(name='author', content='')
 
-    title Apogeu
+    block title
+        unless yield
+            +title()
 
     link(type="image/x-icon" rel="shortcut icon" href="/assets/images/apogeu.ico")
     link(href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css', rel='stylesheet')

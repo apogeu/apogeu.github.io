@@ -1,20 +1,39 @@
 // MENU
+
 .menu
   background #000000
   padding 1em
 
+  > li > a
+    padding 0.7rem 0.5rem
+
   .menu-logo__link
-    padding 0 1rem
+    padding 0
 
   .menu-logo__img
     height 2em
 
+// CONTAINER
+
+.container
+  padding 10em
+
 // FOOTER
+
 footer
   font-size 12px
   color #555555
   text-align center
+  padding 1em
+  border-top 1px solid #f3f3f3
+
+// highlight
+code
+  border none
+  border-radius 0.5em
+  padding 1em !important
 
 // PAGES
 
-@import 'pages'
+@import 'pages/index'
+@import 'pages/get-started'

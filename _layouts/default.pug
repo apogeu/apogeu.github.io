@@ -19,17 +19,22 @@ head
         script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
 
     link(href='/assets/stylesheets/main.css', rel='stylesheet')
+    link(href="/assets/stylesheets/vendor/highlight.css", rel="stylesheet")
     block head
 
 body
     include ../_includes/navbar
 
-    block content
+    //- .container
+    .row
+        .small-11.large-centered.columns
+            block content
 
     include ../_includes/footer
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js')
+    script(src="/assets/javascripts/vendor/highlight.js")
     script(src='/assets/javascripts/main.js')
 
     block defer

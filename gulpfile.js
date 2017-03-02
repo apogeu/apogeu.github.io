@@ -10,8 +10,8 @@ const ghPages = require('gulp-gh-pages');
 const paths = {
   dist: 'dist',
   images: 'assets/images',
-  stylesheets: 'assets/stylesheets',
-  javascripts: 'assets/javascripts',
+  stylesheets: ['assets/stylesheets', 'assets/stylesheets/vendor'],
+  javascripts: ['assets/javascripts', 'assets/javascripts/vendor'],
   templates: {
     includes: '_includes/**',
     layouts: '_layouts/**',
@@ -25,11 +25,11 @@ gulp.task('clean:images', () => {
 });
 
 gulp.task('clean:stylesheets', () => {
-  return del(`${paths.dist}/${paths.stylesheets}`);
+  return del(`${paths.dist}/${paths.stylesheets[0]}`);
 });
 
 gulp.task('clean:javascripts', () => {
-  return del(`${paths.dist}/${paths.javascripts}`);
+  return del(`${paths.dist}/${paths.javascripts[0]}`);
 });
 
 gulp.task('clean:templates', () => {
@@ -43,12 +43,14 @@ gulp.task('images', ['clean:images'], () => {
 });
 
 gulp.task('minify', ['clean:stylesheets'], () => {
-  return gulp.src(`${paths.stylesheets}/**.styl`)
-    .pipe(stylus({
-      'include css': true,
-      compress: true,
-    }))
-    .pipe(gulp.dest(`${paths.dist}/${paths.stylesheets}`));
+  paths.stylesheets.forEach(path => {
+    gulp.src(`${path}/**.styl`)
+      .pipe(stylus({
+        'include css': true,
+        compress: true,
+      }))
+      .pipe(gulp.dest(`${paths.dist}/${path}`));
+  });
 });
 
 gulp.task('templates', ['clean:templates'], () => {
@@ -58,9 +60,11 @@ gulp.task('templates', ['clean:templates'], () => {
 });
 
 gulp.task('uglify', ['clean:javascripts'], () => {
-  return gulp.src(`${paths.javascripts}/**.js`)
-    .pipe(uglify())
-    .pipe(gulp.dest(`${paths.dist}/${paths.javascripts}`));
+  paths.javascripts.forEach(path => {
+    gulp.src(`${path}/**.js`)
+      .pipe(uglify())
+      .pipe(gulp.dest(`${paths.dist}/${path}`));
+  });
 });
 
 gulp.task('watch:images', () => {
@@ -68,7 +72,7 @@ gulp.task('watch:images', () => {
 });
 
 gulp.task('watch:minify', () => {
-  return gulp.watch(`${paths.stylesheets}/**.styl`, ['minify']);
+  return gulp.watch(paths.stylesheets.map(path => `${path}/**`), ['minify']);
 });
 
 gulp.task('watch:templates', () => {
@@ -76,7 +80,7 @@ gulp.task('watch:templates', () => {
 });
 
 gulp.task('watch:uglify', () => {
-  return gulp.watch(`${paths.javascripts}/**.js`, ['uglify']);
+  return gulp.watch(paths.javascripts.map(path => `${path}/**.js`), ['uglify']);
 });
 
 gulp.task('watch', ['watch:images', 'watch:minify', 'watch:templates', 'watch:uglify']);

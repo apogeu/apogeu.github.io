@@ -3,6 +3,9 @@ extends ../../_layouts/default
 block title
     +title('App structure')
 
+block defer
+    script(src="/assets/javascripts/structure.js")
+
 block content
     .structure
         .menu-centered
@@ -15,3 +18,234 @@ block content
                     a(href="/technology") Technology
                 li
                     a(href="/tutorials") Tutorials
+        .row
+            .medium-3.columns
+                ul.vertical.menu(data-accordion-menu data-multi-open="false")
+                    li
+                        a(href="#app") app
+                        ul.menu.vertical.nested
+                            li
+                                a(href="#assets") assets
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#images") images
+                                        ul.menu.vertical.nested
+                                            li
+                                                a(href="#gitkeep") .gitkeep
+                                    li
+                                        a(href="#javascripts") javascripts
+                                        ul.menu.vertical.nested
+                                            li
+                                                a(href="#gitkeep") .gitkeep
+                                    li
+                                        a(href="#stylesheets") stylesheets
+                                        ul.menu.vertical.nested
+                                            li
+                                                a(href="#stylesheets-style") style.styl
+                            li
+                                a(href="#controllers") controllers
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#controllers-homepages") homepages.js
+                                    li
+                                        a(href="#controllers-users") users.js
+                            li
+                                a(href="#i18n") i18n
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#i18n-en") en.json
+                            li
+                                a(href="#middlewares") middlewares
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#middlewares-log") log.js
+                            li
+                                a(href="#models") models
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#models-user") user.js
+                            li
+                                a(href="#services") services
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#services-users") users.js
+                            li
+                                a(href="#views") views
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#views-error") error.pug
+                                    li
+                                        a(href="#views-index") index.pug
+                                    li
+                                        a(href="#views-layout") layout.pug
+                    li
+                        a(href="#config") config
+                        ul.menu.vertical.nested
+                            li
+                                a(href="#config-scaffold") scaffold
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#config-scaffold-controller") controller
+                                    li
+                                        a(href="#config-scaffold-controllerApi") controllerApi
+                                    li
+                                        a(href="#config-scaffold-middleware") middleware
+                                    li
+                                        a(href="#config-scaffold-model") model
+                                    li
+                                        a(href="#config-scaffold-service") service
+                            li
+                                a(href="#config-database") database.js
+                            li
+                                a(href="#config-envs") envs.js
+                            li
+                                a(href="#config-routes") routes.js
+                    li
+                        a(href="#public") public
+                        ul.menu.vertical.nested
+                            li
+                                a(href="#public-stylesheets") stylesheets
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#public-stylesheets-style") style.css
+                    li
+                        a(href="#test") test
+                        ul.menu.vertical.nested
+                            li
+                                a(href="#gitkeep") .gitkeep
+                    li
+                        a(href="#editorconfig") .editorconfig
+                    li
+                        a(href="#gitignore") .gitignore
+                    li
+                        a(href="#index") index.js
+                    li
+                        a(href="#readme") README.md
+                    li
+                        a(href="#yarn") yarn.lock
+            .medium-9.columns
+                #gitkeep.tabs-panel
+                    h4 gitkeep
+
+                #app.tabs-panel
+                    h4 App
+
+                #assets.tabs-panel
+                    h4 Assets
+
+                #images.tabs-panel
+                    h4 Images
+
+                #javascripts.tabs-panel
+                    h4 JavaScripts
+
+                #stylesheets.tabs-panel
+                    h4 Stylesheets
+
+                #stylesheets-style.tabs-panel
+                    h4 style.styl
+
+                #controllers.tabs-panel
+                    h4 Controllers
+
+                #controllers-homepages.tabs-panel
+                    h4 HomepagesController
+
+                #controllers-users.tabs-panel
+                    h4 UsersController
+
+                #i18n.tabs-panel
+                    h4 i18n
+
+                #i18n-en.tabs-panel
+                    h4 en.json
+
+                #middlewares.tabs-panel
+                    h4 Middlewares
+
+                #middlewares-log.tabs-panel
+                    h4 LogMiddleware
+
+                #models.tabs-panel
+                    h4 Models
+
+                #models-user.tabs-panel
+                    h4 UserModel
+
+                #models-users.tabs-panel
+                    h4 UserModel
+
+                #services.tabs-panel
+                    h4 Services
+
+                #services-users.tabs-panel
+                    h4 UsersService
+
+                #views.tabs-panel
+                    h4 Views
+
+                #views-error.tabs-panel
+                    h4 error.pug
+
+                #views-index.tabs-panel
+                    h4 index.pug
+
+                #views-layout.tabs-panel
+                    h4 layout.pug
+
+                #config.tabs-panel
+                    h4 Config
+
+                #config-scaffold.tabs-panel
+                    h4 Scaffold
+
+                #config-scaffold-controller.tabs-panel
+                    h4 Scaffold controller
+
+                #config-scaffold-controllerApi.tabs-panel
+                    h4 Scaffold controllerApi
+
+                #config-scaffold-middleware.tabs-panel
+                    h4 Scaffold middleware
+
+                #config-scaffold-model.tabs-panel
+                    h4 Scaffold model
+
+                #config-scaffold-service.tabs-panel
+                    h4 Scaffold service
+
+                #config-database.tabs-panel
+                    h4 Database
+
+                #config-envs.tabs-panel
+                    h4 Envs
+
+                #config-routes.tabs-panel
+                    h4 Routes
+
+                #public.tabs-panel
+                    h4 Public
+
+                #public-stylesheets.tabs-panel
+                    h4 Public stylesheets
+
+                #public-stylesheets-style.tabs-panel
+                    h4 style.css
+
+                #test.tabs-panel
+                    h4 test
+
+                #editorconfig.tabs-panel
+                    h4 .editorconfig
+
+                #gitignore.tabs-panel
+                    h4 .gitignore
+
+                #index.tabs-panel
+                    h4 index.js
+
+                #readme.tabs-panel
+                    h4 README.md
+
+                #yarn.tabs-panel
+                    h4 yarn.lock

@@ -3,3 +3,5 @@
 node_modules
 dist
 .publish
+/apogeu.github.io.iml
+/.idea/

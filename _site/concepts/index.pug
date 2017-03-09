@@ -29,6 +29,8 @@ block content
                         a(href="#routes") Routes
                     li.tabs-title
                         a(href="#scaffold") Scaffold
+                    li.tabs-title
+                        a(href="#tests") Tests
 
             .medium-9.columns
                 .tabs-content.vertical(data-tabs-content="concepts-tabs")
@@ -92,7 +94,6 @@ block content
                                 | };
                                 | module.exports = LogMiddleware;
 
-
                     #routes.tabs-panel
                         h4 Routes
                         p Routing refers to the definition of application end points (URIs) and how they respond to client requests.
@@ -116,3 +117,21 @@ block content
                                 | };
                     #scaffold.tabs-panel
                         h4 Scaffold
+
+                    #tests.tabs-panel
+                        h4 Tests
+                        p There are distinct structures for unit tests and integration tests.
+                        p #[code .js] files inside #[code test/unit] folder are taken as unit tests, so they only have access to the app's structure.
+                        p #[code .js] files inside #[code test/integration] folder are taken as integration tests, so the app is started before run the tests.
+                        p Currently only mocha tests are comprehended by Apogeu.
+                        pre
+                            code.javascript
+                                | const assert = require('assert');
+                                |
+                                | it('list users', (done) => {
+                                |   UsersService.list({ limit: 1 })
+                                |     .then((results) => {
+                                |       assert.equal(results.length, 1);
+                                |       done();
+                                |     });
+                                | });

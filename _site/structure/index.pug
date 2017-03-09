@@ -110,7 +110,15 @@ block content
                         a(href="#test") test
                         ul.menu.vertical.nested
                             li
-                                a(href="#gitkeep") .gitkeep
+                                a(href="#integration") integration
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#integration-user") user.test.js
+                            li
+                                a(href="#unit") unit
+                                ul.menu.vertical.nested
+                                    li
+                                        a(href="#unit-user") user.test.js
                     li
                         a(href="#editorconfig") .editorconfig
                     li
@@ -232,6 +240,18 @@ block content
 
                 #test.tabs-panel
                     h4 test
+
+                #integration.tabs-panel
+                    h4 integration
+
+                #integration-user.tabs-panel
+                    h4 integration user.test.js
+
+                #unit.tabs-panel
+                    h4 unit
+
+                #unit-user.tabs-panel
+                    h4 unit user.test.js
 
                 #editorconfig.tabs-panel
                     h4 .editorconfig

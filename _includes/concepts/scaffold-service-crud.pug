@@ -1,0 +1,48 @@
+pre
+    code.javascript
+        | const {{model}}Service = {
+        |
+        |   list: (query = {}) => {
+        |     const { limit, skip, sort } = query;
+        |     return {{model}}Model
+        |       .find({})
+        |       .limit(limit)
+        |       .skip(skip)
+        |       .sort(sort);
+        |   },
+        |
+        |   create: (body = {}) => {
+        |     const model = new {{model}}Model(body);
+        |     return model.save();
+        |   },
+        |
+        |   findById: (_id) => new Promise((resolve, reject) => {
+        |     {{model}}Model
+        |       .findOne({ _id })
+        |       .then((data) => {
+        |         if (!data) return reject({ success: false, message: 'Not found', status: 404 });
+        |         resolve(data);
+        |       })
+        |       .catch(reject);
+        |   }),
+        |
+        |   update: (_id, body) => new Promise((resolve, reject) => {
+        |     {{model}}Service.findById(_id)
+        |       .then((user) => {
+        |         Object.assign(user, body);
+        |         user.save().then(resolve).catch(reject);
+        |       })
+        |       .catch(reject);
+        |   }),
+        |
+        |   delete: _id => new Promise((resolve, reject) => {
+        |     {{model}}Service.findById(_id)
+        |       .then((user) => {
+        |         user.remove().then(resolve).catch(reject);
+        |       })
+        |       .catch(reject);
+        |   }),
+        |
+        | };
+        |
+        | module.exports = {{model}}Service;

@@ -1,0 +1,42 @@
+pre
+    code.javascript
+        | const {{model}}Controller = {
+        |
+        |   list: (req, res, next) => {
+        |     {{model}}Service
+        |       .list(req.query)
+        |       .then(data => res.status(200).json({ success: true, data }))
+        |       .catch(next);
+        |   },
+        |
+        |   create: (req, res, next) => {
+        |     {{model}}Service
+        |       .create(req.body)
+        |       .then(data => res.status(200).json({ success: true, data }))
+        |       .catch(next);
+        |   },
+        |
+        |   findById: (req, res, next) => {
+        |     {{model}}Service
+        |       .findById(req.params.id)
+        |       .then(data => res.status(200).json({ success: true, data }))
+        |       .catch(next);
+        |   },
+        |
+        |   update: (req, res, next) => {
+        |     {{model}}Service
+        |       .update(req.params.id, req.body)
+        |       .then(data => res.status(200).json({ success: true, data }))
+        |       .catch(next);
+        |   },
+        |
+        |   delete: (req, res, next) => {
+        |     {{model}}Service
+        |       .delete(req.params.id)
+        |       .then(() => res.status(200).json({ success: true }))
+        |       .catch(next);
+        |   },
+        |
+        | };
+        |
+        | module.exports = {{model}}Controller;

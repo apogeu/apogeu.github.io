@@ -100,9 +100,13 @@ block content
                         p In Apogeu, a route is a module that lives in the #[code config/routes.js].
                         pre
                             code.javascript
+                                | // config/routes.js
+                                |
                                 | module.exports = {
                                 |   'get /': HomepagesController.index,
+                                |
                                 |   'get /middleware': [LogMiddleware, HomepagesController.index],
+                                |
                                 |   '/users': [
                                 |     {
                                 |       method: 'get',
@@ -114,10 +118,80 @@ block content
                                 |       controller: UsersController.create,
                                 |     },
                                 |   ],
+                                |
+                                |   '/users/:id': [
+                                |     {
+                                |       method: 'get',
+                                |       controller: UsersController.findById,
+                                |     },
+                                |     {
+                                |       method: 'put',
+                                |       controller: UsersController.update,
+                                |     },
+                                |     {
+                                |       method: 'delete',
+                                |       controller: UsersController.delete,
+                                |     },
+                                |   ],
+                                |
                                 | };
                     #scaffold.tabs-panel
                         h4 Scaffold
+                        p Scaffolding allows you to generate some basic interfaces. In Apogeu, scaffold lives in the #[code config/scaffold] directory.
+                        ul.accordion(data-accordion data-allow-all-closed="true")
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") config/scaffold/controller
+                                .accordion-content(data-tab-content)
+                                    p A controller can be created with the  #[code apogeu create controller model_name] command:
+                                    pre
+                                        code.bash $ apogeu create controller user
+                                    p The scaffold will create the #[code app/controllers/users.js] module
+                                    include ../../_includes/concepts/scaffold-controller
 
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") config/scaffold/controllerCrud
+                                .accordion-content(data-tab-content)
+                                    p A controllerCrud can be created with the  #[code apogeu create controller model_name --crud] command:
+                                    pre
+                                        code.bash $ apogeu create controller user --crud
+                                    p The scaffold will create the #[code app/controllers/users.js] module
+                                    include ../../_includes/concepts/scaffold-controller-crud
+
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") config/scaffold/middleware
+                                .accordion-content(data-tab-content)
+                                    p A middleware can be created with the  #[code apogeu create middleware model_name] command:
+                                    pre
+                                        code.bash $ apogeu create middleware log
+                                    p The scaffold will create the #[code app/middlewares/log.js] module
+                                    include ../../_includes/concepts/scaffold-middleware
+
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") config/scaffold/model
+                                .accordion-content(data-tab-content)
+                                    p A model can be created with the  #[code apogeu create model model_name] command:
+                                    pre
+                                        code.bash $ apogeu create model user
+                                    p The scaffold will create the #[code app/models/user.js] module
+                                    include ../../_includes/concepts/scaffold-model
+
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") config/scaffold/service
+                                .accordion-content(data-tab-content)
+                                    p A service can be created with the  #[code apogeu create service model_name] command:
+                                    pre
+                                        code.bash $ apogeu create service user
+                                    p The scaffold will create the #[code app/services/users.js] module
+                                    include ../../_includes/concepts/scaffold-service
+
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") config/scaffold/serviceCrud
+                                .accordion-content(data-tab-content)
+                                    p A serviceCrud can be created with the  #[code apogeu create service model_name --crud] command:
+                                    pre
+                                        code.bash $ apogeu create service user --crud
+                                    p The scaffold will create the #[code app/services/users.js] module
+                                    include ../../_includes/concepts/scaffold-service-crud
                     #tests.tabs-panel
                         h4 Tests
                         p There are distinct structures for unit tests and integration tests.

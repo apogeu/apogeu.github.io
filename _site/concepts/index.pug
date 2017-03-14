@@ -36,7 +36,7 @@ block content
                 .tabs-content.vertical(data-tabs-content="concepts-tabs")
                     #models.tabs-panel.is-active
                         h4 Models
-                        p A model module fulfills the #[b M] in the #[a(href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller") Model View Controller] (#[b M]VC) pattern and represents a persistent entity that is mapped onto an underlying database. In Apogeu a model is a module with a plural name convention and lives in the #[code app/models] directory.
+                        p A model module fulfills the #[b M] in the #[a(href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller") Model View Controller] (#[b M]VC) pattern and represents a persistent entity that is mapped onto an underlying database. In #{ apogeu } a model is a module with a plural name convention and lives in the #[code app/models] directory.
                         p Models don't need to be required, just use #[code UserModel] wherever you want.
                         p A model can be created with the #[code apogeu model model_name] command:
                         pre
@@ -53,7 +53,7 @@ block content
 
                     #services.tabs-panel
                         h4 Services
-                        p A service contains business logic that can be reused across a Apogeu application. In Apogeu, a service is a module with a plural name that ends in the "Service" convention and lives in the #[code app/services] directory.
+                        p A service contains business logic that can be reused across a #{ apogeu } application. In #{ apogeu }, a service is a module with a plural name that ends in the "Service" convention and lives in the #[code app/services] directory.
                         p Services don't need to be required, just use #[code UsersService] wherever you want.
                         p A service can be created with the #[code apogeu create service model_name] command:
                         pre
@@ -67,7 +67,7 @@ block content
 
                     #controllers.tabs-panel
                         h4 Controllers
-                        p A controller fulfills the #[b C] in the #[a(href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller") Model View Controller] (MV#[b C]) pattern and is responsible for handling web requests. In Apogeu, a service is a module with a plural name that ends in the "Controller" convention and lives in the #[code app/controllers] directory.
+                        p A controller fulfills the #[b C] in the #[a(href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller") Model View Controller] (MV#[b C]) pattern and is responsible for handling web requests. In #{ apogeu }, a service is a module with a plural name that ends in the "Controller" convention and lives in the #[code app/controllers] directory.
                         p Controllers don't need to be required, just use #[code UsersController] wherever you want.
                         p A controller can be created with the  #[code apogeu create controller model_name] command:
                         pre
@@ -81,7 +81,7 @@ block content
 
                     #middlewares.tabs-panel
                         h4 Middlewares
-                        p #[a(href="http://expressjs.com/en/guide/writing-middleware.html") Middleware] functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. In Apogeu, a service is a module with a singular name that ends in the "Middleware" convention and lives in the #[code app/middlewares] directory.
+                        p #[a(href="http://expressjs.com/en/guide/writing-middleware.html") Middleware] functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. In #{ apogeu }, a service is a module with a singular name that ends in the "Middleware" convention and lives in the #[code app/middlewares] directory.
                         p Middlewares don't need to be required, just use #[code LogMiddleware] wherever you want.
                         p A middleware can be created with the #[code apogeu create middleware log] command:
                         pre
@@ -97,7 +97,7 @@ block content
                     #routes.tabs-panel
                         h4 Routes
                         p Routing refers to the definition of application end points (URIs) and how they respond to client requests.
-                        p In Apogeu, a route is a module that lives in the #[code config/routes.js].
+                        p In #{ apogeu }, a route is a module that lives in the #[code config/routes.js].
                         pre
                             code.javascript
                                 | // config/routes.js
@@ -137,67 +137,67 @@ block content
                                 | };
                     #scaffold.tabs-panel
                         h4 Scaffold
-                        p Scaffolding allows you to generate some basic interfaces. In Apogeu, scaffold lives in the #[code config/scaffold] directory.
+                        p Scaffolding allows you to generate some basic interfaces. In #{ apogeu }, scaffold lives in the #[code config/scaffold] directory.
                         ul.accordion(data-accordion data-allow-all-closed="true")
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/controller
                                 .accordion-content(data-tab-content)
-                                    p A controller can be created with the  #[code apogeu create controller model_name] command:
+                                    p A controller is used with the  #[code apogeu create controller model_name] command:
                                     pre
                                         code.bash $ apogeu create controller user
-                                    p The scaffold will create the #[code app/controllers/users.js] module
+                                    p The scaffold will create the #[code app/controllers/users.js] based on the next module:
                                     include ../../_includes/concepts/scaffold-controller
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/controllerCrud
                                 .accordion-content(data-tab-content)
-                                    p A controllerCrud can be created with the  #[code apogeu create controller model_name --crud] command:
+                                    p A controllerCrud is used with the  #[code apogeu create controller model_name --crud] command:
                                     pre
                                         code.bash $ apogeu create controller user --crud
-                                    p The scaffold will create the #[code app/controllers/users.js] module
+                                    p The scaffold will create the #[code app/controllers/users.js] based on the next module:
                                     include ../../_includes/concepts/scaffold-controller-crud
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/middleware
                                 .accordion-content(data-tab-content)
-                                    p A middleware can be created with the  #[code apogeu create middleware model_name] command:
+                                    p A middleware is used with the  #[code apogeu create middleware model_name] command:
                                     pre
                                         code.bash $ apogeu create middleware log
-                                    p The scaffold will create the #[code app/middlewares/log.js] module
+                                    p The scaffold will create the #[code app/middlewares/log.js] based on the next module:
                                     include ../../_includes/concepts/scaffold-middleware
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/model
                                 .accordion-content(data-tab-content)
-                                    p A model can be created with the  #[code apogeu create model model_name] command:
+                                    p A model is used with the  #[code apogeu create model model_name] command:
                                     pre
                                         code.bash $ apogeu create model user
-                                    p The scaffold will create the #[code app/models/user.js] module
+                                    p The scaffold will create the #[code app/models/user.js] based on the next module:
                                     include ../../_includes/concepts/scaffold-model
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/service
                                 .accordion-content(data-tab-content)
-                                    p A service can be created with the  #[code apogeu create service model_name] command:
+                                    p A service is used with the  #[code apogeu create service model_name] command:
                                     pre
                                         code.bash $ apogeu create service user
-                                    p The scaffold will create the #[code app/services/users.js] module
+                                    p The scaffold will create the #[code app/services/users.js] based on the next module:
                                     include ../../_includes/concepts/scaffold-service
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/serviceCrud
                                 .accordion-content(data-tab-content)
-                                    p A serviceCrud can be created with the  #[code apogeu create service model_name --crud] command:
+                                    p A serviceCrud is used with the  #[code apogeu create service model_name --crud] command:
                                     pre
                                         code.bash $ apogeu create service user --crud
-                                    p The scaffold will create the #[code app/services/users.js] module
+                                    p The scaffold will create the #[code app/services/users.js] based on the next module:
                                     include ../../_includes/concepts/scaffold-service-crud
                     #tests.tabs-panel
                         h4 Tests
                         p There are distinct structures for unit tests and integration tests.
                         p #[code .js] files inside #[code test/unit] folder are taken as unit tests, so they only have access to the app's structure.
                         p #[code .js] files inside #[code test/integration] folder are taken as integration tests, so the app is started before run the tests.
-                        p Currently only mocha tests are comprehended by Apogeu.
+                        p Currently only mocha tests are comprehended by #{ apogeu }.
                         pre
                             code.javascript
                                 | const assert = require('assert');

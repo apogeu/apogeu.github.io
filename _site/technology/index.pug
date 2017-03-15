@@ -13,3 +13,183 @@ block content
                     a(href="/structure") App structure
                 li.active
                     a(href="/technology") Technology
+                    
+        .text-center
+            h2 Technologies used throughout the project 
+        -
+            var technologies = [
+                {
+                    name: 'assert',
+                    version: '1.4.1',
+                    description: 'This module is used for writing unit tests for your applications.',
+                },
+                {
+                    name: 'bluebird',
+                    version: '3.5.0',
+                    description: 'Bluebird is a fully featured promise library with focus on innovative features and performance.',
+                },
+                {
+                    name: 'body-parser',
+                    version: '1.17.0',
+                    description: 'Parse incoming request bodies in a middleware before your handlers, available under the req.body property.',
+                },
+                {
+                    name: 'capitalize',
+                    version: '1.0.0',
+                    description: 'Capitalize the first letter of a string, or all words in a string.',
+                },
+                {
+                    name: 'compression',
+                    version: '1.6.2',
+                    description: 'Node.js compression middleware.',
+                },
+                {
+                    name: 'cookie-parser',
+                    version: '1.4.3',
+                    description: 'Parse Cookie header and populate req.cookies with an object keyed by the cookie names.',
+                },
+                {
+                    name: 'debug',
+                    version: '2.6.3',
+                    description: 'A tiny node.js debugging utility modelled after node core\'s debugging technique.',
+                },
+                {
+                    name: 'express',
+                    version: '4.15.0',
+                    description: 'Fast, unopinionated, minimalist web framework for node.',
+                },
+                {
+                    name: 'gulp',
+                    version: '3.9.1',
+                    description: 'gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow.',
+                },
+                {
+                    name: 'gulp-stylus',
+                    version: '2.6.0',
+                    description: 'Compile Stylus with gulp (gulpjs.com).',
+                },
+                {
+                    name: 'helmet',
+                    version: '3.5.0',
+                    description: 'Helmet helps you secure your Express apps by setting various HTTP headers. It\'s not a silver bullet, but it can help!',
+                },
+                {
+                    name: 'i18n',
+                    version: '0.8.3',
+                    description: 'Lightweight simple translation module with dynamic json storage.',
+                },
+                {
+                    name: 'method-override',
+                    version: '2.3.7',
+                    description: 'Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn\'t support it.',
+                },
+                {
+                    name: 'methods',
+                    version: '1.1.2',
+                    description: 'HTTP verbs that Node.js core\'s HTTP parser supports.',
+                },
+                {
+                    name: 'mkdirp',
+                    version: '0.5.1',
+                    description: 'Like mkdir -p, but in node.js!',
+                },
+                {
+                    name: 'mocha',
+                    version: '3.2.0',
+                    description: 'Mocha is a simple, flexible, fun JavaScript test framework for node.js and the browser.',
+                },
+                {
+                    name: 'mongoose',
+                    version: '4.9.0',
+                    description: 'Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.',
+                },
+                {
+                    name: 'mongoose-timestamp',
+                    version: '0.6.0',
+                    description: 'Simple plugin for Mongoose which adds createdAt and updatedAt date attributes that get auto-assigned to the most recent create/update timestamp.',
+                },
+                {
+                    name: 'morgan',
+                    version: '1.8.1',
+                    description: 'HTTP request logger middleware for node.js.',
+                },
+                {
+                    name: 'mustache',
+                    version: '2.3.0',
+                    description: 'mustache.js is an implementation of the mustache template system in JavaScript.',
+                },
+                {
+                    name: 'npm',
+                    version: '4.4.1',
+                    description: 'npm is configured to use npm, Inc.\'s public package registry at https://registry.npmjs.org by default.',
+                },
+                {
+                    name: 'pluralize',
+                    version: '4.0.0',
+                    description: 'Pluralize and singularize any word.',
+                },
+                {
+                    name: 'pug',
+                    version: '2.0.0-beta11',
+                    description: 'Pug is a high performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.',
+                },
+                {
+                    name: 'request',
+                    version: '2.81.0',
+                    description: 'Request is designed to be the simplest way possible to make http calls.',
+                },
+                {
+                    name: 'rimraf',
+                    version: '2.6.1',
+                    description: 'The UNIX command rm -rf for node.',
+                },
+                {
+                    name: 'split',
+                    version: '1.0.0',
+                    description: 'Break up a stream and reassemble it so that each line is a chunk. matcher may be a String, or a RegExp.',
+                },
+                {
+                    name: 'unzip',
+                    version: '0.1.11',
+                    description: 'Streaming cross-platform unzip tool written in node.js.',
+                },
+                {
+                    name: 'winston',
+                    version: '2.3.1',
+                    description: 'A multi-transport async logging library for node.js. "CHILL WINSTON! ... I put it in the logs.".',
+                },
+                {
+                    name: 'yargs',
+                    version: '7.0.2',
+                    description: 'Yargs be a node.js library fer hearties tryin\' ter parse optstrings.',
+                },
+                {
+                    name: 'eslint',
+                    version: '3.17.0',
+                    description: 'ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.',
+                },
+                {
+                    name: 'eslint-config-airbnb-base',
+                    version: '11.1.1',
+                    description: 'This package provides Airbnb\'s base JS .eslintrc as an extensible shared config.',
+                },
+                {
+                    name: 'eslint-plugin-import',
+                    version: '2.2.0',
+                    description: 'This plugin intends to support linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.',
+                },
+            ]
+
+        table
+            thead
+                tr
+                    th Name
+                    th Version
+                    th Description
+            tbody
+                each tech in technologies
+                    tr
+                        td
+                            a(href=`https://www.npmjs.com/package/${ tech.name }` target="_blank") #{ tech.name }
+                        td #{ tech.version }
+                        td #{ tech.description }

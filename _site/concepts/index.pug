@@ -28,6 +28,8 @@ block content
                     li.tabs-title
                         a(href="#routes") Routes
                     li.tabs-title
+                        a(href="#views") Views
+                    li.tabs-title
                         a(href="#scaffold") Scaffold
                     li.tabs-title
                         a(href="#tests") Tests
@@ -99,6 +101,12 @@ block content
                         p Routing refers to the definition of application end points (URIs) and how they respond to client requests.
                         p In #{ apogeu }, a route is a module that lives in the #[code config/routes.js].
                         include ../../_includes/files/routes
+                        
+                    #views.tabs-panel
+                        h4 Views
+                        p For the views we use the Pug template engine.
+                        p You can learn more about it in: #[a(href="https://pugjs.org" target="_blank") https://pugjs.org]
+                        p In #{ apogeu }, the views that lives in the #[code app/views].
 
                     #scaffold.tabs-panel
                         h4 Scaffold

@@ -98,43 +98,8 @@ block content
                         h4 Routes
                         p Routing refers to the definition of application end points (URIs) and how they respond to client requests.
                         p In #{ apogeu }, a route is a module that lives in the #[code config/routes.js].
-                        pre
-                            code.javascript
-                                | // config/routes.js
-                                |
-                                | module.exports = {
-                                |   'get /': HomepagesController.index,
-                                |
-                                |   'get /middleware': [LogMiddleware, HomepagesController.index],
-                                |
-                                |   '/users': [
-                                |     {
-                                |       method: 'get',
-                                |       middlewares: [LogMiddleware],
-                                |       controller: UsersController.list,
-                                |     },
-                                |     {
-                                |       method: 'post',
-                                |       controller: UsersController.create,
-                                |     },
-                                |   ],
-                                |
-                                |   '/users/:id': [
-                                |     {
-                                |       method: 'get',
-                                |       controller: UsersController.findById,
-                                |     },
-                                |     {
-                                |       method: 'put',
-                                |       controller: UsersController.update,
-                                |     },
-                                |     {
-                                |       method: 'delete',
-                                |       controller: UsersController.delete,
-                                |     },
-                                |   ],
-                                |
-                                | };
+                        include ../../_includes/files/routes
+
                     #scaffold.tabs-panel
                         h4 Scaffold
                         p Scaffolding allows you to generate some basic interfaces. In #{ apogeu }, scaffold lives in the #[code config/scaffold] directory.
@@ -146,7 +111,7 @@ block content
                                     pre
                                         code.bash $ apogeu create controller user
                                     p The scaffold will create the #[code app/controllers/users.js] based on the next module:
-                                    include ../../_includes/concepts/scaffold-controller
+                                    include ../../_includes/files/scaffold-controller
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/controllerCrud
@@ -155,7 +120,7 @@ block content
                                     pre
                                         code.bash $ apogeu create controller user --crud
                                     p The scaffold will create the #[code app/controllers/users.js] based on the next module:
-                                    include ../../_includes/concepts/scaffold-controller-crud
+                                    include ../../_includes/files/scaffold-controller-crud
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/middleware
@@ -164,7 +129,7 @@ block content
                                     pre
                                         code.bash $ apogeu create middleware log
                                     p The scaffold will create the #[code app/middlewares/log.js] based on the next module:
-                                    include ../../_includes/concepts/scaffold-middleware
+                                    include ../../_includes/files/scaffold-middleware
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/model
@@ -173,7 +138,7 @@ block content
                                     pre
                                         code.bash $ apogeu create model user
                                     p The scaffold will create the #[code app/models/user.js] based on the next module:
-                                    include ../../_includes/concepts/scaffold-model
+                                    include ../../_includes/files/scaffold-model
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/service
@@ -182,7 +147,7 @@ block content
                                     pre
                                         code.bash $ apogeu create service user
                                     p The scaffold will create the #[code app/services/users.js] based on the next module:
-                                    include ../../_includes/concepts/scaffold-service
+                                    include ../../_includes/files/scaffold-service
 
                             li.accordion-item(data-accordion-item)
                                 a.accordion-title(href="#") config/scaffold/serviceCrud
@@ -191,7 +156,7 @@ block content
                                     pre
                                         code.bash $ apogeu create service user --crud
                                     p The scaffold will create the #[code app/services/users.js] based on the next module:
-                                    include ../../_includes/concepts/scaffold-service-crud
+                                    include ../../_includes/files/scaffold-service-crud
                     #tests.tabs-panel
                         h4 Tests
                         p There are distinct structures for unit tests and integration tests.

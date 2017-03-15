@@ -1,0 +1,42 @@
+pre
+    code.javascript
+        | const mongoose = require('mongoose');
+        | const log = require('winston');
+        | const mongooseTimestamps = require('mongoose-timestamp');
+        |
+        | const envs = require('./envs');
+        |
+        | const { timestamps, mongodb, node_env } = envs;
+        |
+        | log.debug(`mongoose timestamps: ${timestamps}`);
+        |
+        | mongoose.Promise = Promise;
+        |
+        | if (timestamps) mongoose.plugin(mongooseTimestamps);
+        |
+        | module.exports = () => new Promise((resolve, reject) => {
+        |   const debugMongoose = node_env !== 'production';
+        |   log.debug(`debug mongoose: ${debugMongoose}`);
+        |
+        |   mongoose.set('debug', debugMongoose);
+        |
+        |   mongoose.connect(mongodb);
+        |
+        |   mongoose.connection.on('connected', () => log.info(`Mongoose default connection open to ${mongodb}`));
+        |
+        |   mongoose.connection.on('error', err => reject(err));
+        |
+        |   mongoose.connection.on('disconnected', () => log.info('Mongoose default connection disconnected'));
+        |
+        |   mongoose.connection.once('open', () => {
+        |     resolve();
+        |     log.info('Mongoose default connection is open');
+        |   });
+        |
+        |   process.on('SIGINT', () => {
+        |     mongoose.connection.close(() => {
+        |       log.info('Mongoose default connection disconnected through app termination');
+        |       process.exit(0);
+        |     });
+        |   });
+        | });

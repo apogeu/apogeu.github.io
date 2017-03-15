@@ -134,72 +134,110 @@ block content
             .medium-9.columns
                 #gitkeep.tabs-panel
                     h4 gitkeep
+                    p Git does not track empty directory. In order to track a directory, a file must exist within it. The trick that many people use is to create a hidden file usually called .gitkeep. The name of the file does not matter. As long as there is a file in the directory .gitkeep, readme.txt etc, git will track directory.
 
                 #app.tabs-panel
                     h4 App
+                    p One of the main directories. Here you will find all the development structures of your application.
 
                 #assets.tabs-panel
                     h4 Assets
+                    p Directory where all assets files are located.
 
                 #images.tabs-panel
                     h4 Images
+                    p Directory where all images are located.
 
                 #javascripts.tabs-panel
                     h4 JavaScripts
+                    p Directory where all JavaScript files are located.
 
                 #stylesheets.tabs-panel
                     h4 Stylesheets
+                    p Directory where all Stylus files are located.
 
                 #stylesheets-style.tabs-panel
                     h4 style.styl
+                    p Stylus file example.
+                    include ../../_includes/files/style
 
                 #controllers.tabs-panel
                     h4 Controllers
+                    p Directory where all controllers files are located.
 
                 #controllers-homepages.tabs-panel
                     h4 HomepagesController
+                    p Controller file example rendering a view.
+                    a(href="/concepts/#controllers" target="_blank") See more at here
+                    include ../../_includes/files/homepageController
 
                 #controllers-users.tabs-panel
                     h4 UsersController
+                    p Controller file example CRUD api.
+                    a(href="/concepts/#controllers" target="_blank") See more at here
+                    include ../../_includes/files/userController
 
                 #i18n.tabs-panel
                     h4 i18n
+                    p Directory where all translation files are located.
 
                 #i18n-en.tabs-panel
                     h4 en.json
+                    p Translation file example.
+                    a(href="https://www.npmjs.com/package/i18n" target="_blank") See more at here
+                    include ../../_includes/files/i18n
 
                 #middlewares.tabs-panel
                     h4 Middlewares
+                    p Directory where all middlewares files are located.
 
                 #middlewares-log.tabs-panel
                     h4 LogMiddleware
+                    p Middleware file example.
+                    a(href="/concepts/#middlewares" target="_blank") See more at here
+                    include ../../_includes/files/logMiddleware
 
                 #models.tabs-panel
                     h4 Models
+                    p Directory where all models files are located.
 
                 #models-user.tabs-panel
                     h4 UserModel
-
-                #models-users.tabs-panel
-                    h4 UserModel
+                    p Model file example.
+                    a(href="/concepts/#models" target="_blank") See more at here
+                    include ../../_includes/files/userModel
 
                 #services.tabs-panel
                     h4 Services
+                    p Directory where all services files are located.
 
                 #services-users.tabs-panel
                     h4 UsersService
+                    p Service file example CRUD.
+                    a(href="/concepts/#services" target="_blank") See more at here
+                    include ../../_includes/files/userService
 
                 #views.tabs-panel
                     h4 Views
+                    p Directory where all views (pug) files are located.
 
                 #views-error.tabs-panel
                     h4 error.pug
+                    p Error page example.
+                    a(href="/concepts/#views" target="_blank") See more at here
+                    include ../../_includes/files/errorView
 
                 #views-index.tabs-panel
                     h4 index.pug
+                    p Index page example.
+                    a(href="/concepts/#views" target="_blank") See more at here
+                    include ../../_includes/files/indexView
 
                 #views-layout.tabs-panel
                     h4 layout.pug
+                    p Layout example.
+                    a(href="/concepts/#views" target="_blank") See more at here
+                    include ../../_includes/files/layoutView
 
                 #config.tabs-panel
                     h4 Config
@@ -319,7 +357,8 @@ block content
 
                 #public-stylesheets.tabs-panel
                     h4 Stylesheets
-                    p Directory where all css files are located
+                    p Directory where all css files are located.
+                    b All Stylus files are compiled to this location.
 
                 #public-stylesheets-style.tabs-panel
                     h4 style.css

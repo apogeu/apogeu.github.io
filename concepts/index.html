@@ -45,15 +45,15 @@ module.exports = {
     },
   ],
 
-};</code></pre></div><div class="tabs-panel" id="scaffold"><h4>Scaffold</h4><p>Scaffolding allows you to generate some basic interfaces. In Apogeu, scaffold lives in the <code>config/scaffold</code> directory.</p><ul class="accordion" data-accordion="data-accordion" data-allow-all-closed="true"><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/controller</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A controller can be created with the  <code>apogeu create controller model_name</code> command:</p><pre><code class="bash">$ apogeu create controller user</code></pre><p>The scaffold will create the <code>app/controllers/users.js</code> module</p><pre><code class="javascript">const {{model}}Controller = {
+};</code></pre></div><div class="tabs-panel" id="scaffold"><h4>Scaffold</h4><p>Scaffolding allows you to generate some basic interfaces. In Apogeu, scaffold lives in the <code>config/scaffold</code> directory.</p><ul class="accordion" data-accordion="data-accordion" data-allow-all-closed="true"><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/controller</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A controller is used with the  <code>apogeu create controller model_name</code> command:</p><pre><code class="bash">$ apogeu create controller user</code></pre><p>The scaffold will create the <code>app/controllers/users.js</code> based on the next module:</p><pre><code class="javascript">const {{model}}Controller = {
 
   index: (req, res) => {
-    res.send('{{model}}');
+    res.send('{{model}}Controller');
   },
 
 };
 
-module.exports = {{model}}Controller;</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/controllerCrud</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A controllerCrud can be created with the  <code>apogeu create controller model_name --crud</code> command:</p><pre><code class="bash">$ apogeu create controller user --crud</code></pre><p>The scaffold will create the <code>app/controllers/users.js</code> module</p><pre><code class="javascript">const {{model}}Controller = {
+module.exports = {{model}}Controller;</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/controllerCrud</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A controllerCrud is used with the  <code>apogeu create controller model_name --crud</code> command:</p><pre><code class="bash">$ apogeu create controller user --crud</code></pre><p>The scaffold will create the <code>app/controllers/users.js</code> based on the next module:</p><pre><code class="javascript">const {{model}}Controller = {
 
   list: (req, res, next) => {
     {{model}}Service
@@ -92,11 +92,11 @@ module.exports = {{model}}Controller;</code></pre></div></li><li class="accordio
 
 };
 
-module.exports = {{model}}Controller;</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/middleware</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A middleware can be created with the  <code>apogeu create middleware model_name</code> command:</p><pre><code class="bash">$ apogeu create middleware log</code></pre><p>The scaffold will create the <code>app/middlewares/log.js</code> module</p><pre><code class="javascript">const {{model}}Middleware = (req, res, next) => {
+module.exports = {{model}}Controller;</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/middleware</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A middleware is used with the  <code>apogeu create middleware model_name</code> command:</p><pre><code class="bash">$ apogeu create middleware log</code></pre><p>The scaffold will create the <code>app/middlewares/log.js</code> based on the next module:</p><pre><code class="javascript">const {{model}}Middleware = (req, res, next) => {
   next();
 };
 
-module.exports = {{model}}Middleware;</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/model</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A model can be created with the  <code>apogeu create model model_name</code> command:</p><pre><code class="bash">$ apogeu create model user</code></pre><p>The scaffold will create the <code>app/models/user.js</code> module</p><pre><code class="javascript">const mongoose = require('mongoose');
+module.exports = {{model}}Middleware;</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/model</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A model is used with the  <code>apogeu create model model_name</code> command:</p><pre><code class="bash">$ apogeu create model user</code></pre><p>The scaffold will create the <code>app/models/user.js</code> based on the next module:</p><pre><code class="javascript">const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
@@ -104,14 +104,14 @@ const {{model}}Model = new Schema({
 
 });
 
-module.exports = mongoose.model('{{model}}', {{model}}Model);</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/service</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A service can be created with the  <code>apogeu create service model_name</code> command:</p><pre><code class="bash">$ apogeu create service user</code></pre><p>The scaffold will create the <code>app/services/users.js</code> module</p><pre><code class="javascript">const {{model}}Service = {
+module.exports = mongoose.model('{{model}}', {{model}}Model);</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/service</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A service is used with the  <code>apogeu create service model_name</code> command:</p><pre><code class="bash">$ apogeu create service user</code></pre><p>The scaffold will create the <code>app/services/users.js</code> based on the next module:</p><pre><code class="javascript">const {{model}}Service = {
 
   index: () => new Promise((resolve, reject) => {
   }),
 
 };
 
-module.exports = {{model}}Service;</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/serviceCrud</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A serviceCrud can be created with the  <code>apogeu create service model_name --crud</code> command:</p><pre><code class="bash">$ apogeu create service user --crud</code></pre><p>The scaffold will create the <code>app/services/users.js</code> module</p><pre><code class="javascript">const {{model}}Service = {
+module.exports = {{model}}Service;</code></pre></div></li><li class="accordion-item" data-accordion-item="data-accordion-item"><a class="accordion-title" href="#">config/scaffold/serviceCrud</a><div class="accordion-content" data-tab-content="data-tab-content"><p>A serviceCrud is used with the  <code>apogeu create service model_name --crud</code> command:</p><pre><code class="bash">$ apogeu create service user --crud</code></pre><p>The scaffold will create the <code>app/services/users.js</code> based on the next module:</p><pre><code class="javascript">const {{model}}Service = {
 
   list: (query = {}) => {
     const { limit, skip, sort } = query;

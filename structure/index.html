@@ -1,6 +1,282 @@
 <!DOCTYPE html(lang='en')><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags--><meta name="description" content=""/><meta name="author" content=""/><title>Apogeu | App structure</title><link type="image/x-icon" rel="shortcut icon" href="/assets/images/apogeu.ico"/><link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" rel="stylesheet"/><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries--><!--if lt IE 9script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
 script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
---><link href="/assets/stylesheets/main.css" rel="stylesheet"/><link href="/assets/stylesheets/vendor/highlight.css" rel="stylesheet"/></head><body><ul class="dropdown menu navbar align-right" data-dropdown-menu="data-dropdown-menu"><li class="float-left"><a class="menu-logo__link" href="/"><img class="menu-logo__img" src="/assets/images/apogeu-white.jpg"/></a></li><li><a href="#">Documentation</a><ul class="menu"><li><a href="/concepts">Concepts</a></li><li><a href="/structure">App structure</a></li><li><a href="/technology">Technology</a></li></ul></li><li><a href="/get-started">Get Started</a></li></ul><div class="row container"><div class="small-11 large-centered columns"><div class="structure"><div class="menu-centered"><ul class="menu"><li><a href="/concepts">Concepts</a></li><li class="active"><a href="/structure">App structure</a></li><li><a href="/technology">Technology</a></li></ul></div><div class="row"><div class="medium-3 columns"><ul class="vertical menu" data-accordion-menu="data-accordion-menu" data-multi-open="false"><li><a href="#app">app</a><ul class="menu vertical nested"><li><a href="#assets">assets</a><ul class="menu vertical nested"><li><a href="#images">images</a><ul class="menu vertical nested"><li><a href="#gitkeep">.gitkeep</a></li></ul></li><li><a href="#javascripts">javascripts</a><ul class="menu vertical nested"><li><a href="#gitkeep">.gitkeep</a></li></ul></li><li><a href="#stylesheets">stylesheets</a><ul class="menu vertical nested"><li><a href="#stylesheets-style">style.styl</a></li></ul></li></ul></li><li><a href="#controllers">controllers</a><ul class="menu vertical nested"><li><a href="#controllers-homepages">homepages.js</a></li><li><a href="#controllers-users">users.js</a></li></ul></li><li><a href="#i18n">i18n</a><ul class="menu vertical nested"><li><a href="#i18n-en">en.json</a></li></ul></li><li><a href="#middlewares">middlewares</a><ul class="menu vertical nested"><li><a href="#middlewares-log">log.js</a></li></ul></li><li><a href="#models">models</a><ul class="menu vertical nested"><li><a href="#models-user">user.js</a></li></ul></li><li><a href="#services">services</a><ul class="menu vertical nested"><li><a href="#services-users">users.js</a></li></ul></li><li><a href="#views">views</a><ul class="menu vertical nested"><li><a href="#views-error">error.pug</a></li><li><a href="#views-index">index.pug</a></li><li><a href="#views-layout">layout.pug</a></li></ul></li></ul></li><li><a href="#config">config</a><ul class="menu vertical nested"><li><a href="#config-scaffold">scaffold</a><ul class="menu vertical nested"><li><a href="#config-scaffold-controller">controller</a></li><li><a href="#config-scaffold-controllerApi">controllerApi</a></li><li><a href="#config-scaffold-middleware">middleware</a></li><li><a href="#config-scaffold-model">model</a></li><li><a href="#config-scaffold-service">service</a></li></ul></li><li><a href="#config-database">database.js</a></li><li><a href="#config-envs">envs.js</a></li><li><a href="#config-routes">routes.js</a></li></ul></li><li><a href="#public">public</a><ul class="menu vertical nested"><li><a href="#public-stylesheets">stylesheets</a><ul class="menu vertical nested"><li><a href="#public-stylesheets-style">style.css</a></li></ul></li></ul></li><li><a href="#test">test</a><ul class="menu vertical nested"><li><a href="#integration">integration</a><ul class="menu vertical nested"><li><a href="#integration-user">user.test.js</a></li></ul></li><li><a href="#unit">unit</a><ul class="menu vertical nested"><li><a href="#unit-user">user.test.js</a></li></ul></li></ul></li><li><a href="#editorconfig">.editorconfig</a></li><li><a href="#gitignore">.gitignore</a></li><li><a href="#index">index.js</a></li><li><a href="#readme">README.md</a></li><li><a href="#yarn">yarn.lock</a></li></ul></div><div class="medium-9 columns"><div class="tabs-panel" id="gitkeep"><h4>gitkeep</h4></div><div class="tabs-panel" id="app"><h4>App</h4></div><div class="tabs-panel" id="assets"><h4>Assets</h4></div><div class="tabs-panel" id="images"><h4>Images</h4></div><div class="tabs-panel" id="javascripts"><h4>JavaScripts</h4></div><div class="tabs-panel" id="stylesheets"><h4>Stylesheets</h4></div><div class="tabs-panel" id="stylesheets-style"><h4>style.styl</h4></div><div class="tabs-panel" id="controllers"><h4>Controllers</h4></div><div class="tabs-panel" id="controllers-homepages"><h4>HomepagesController</h4></div><div class="tabs-panel" id="controllers-users"><h4>UsersController</h4></div><div class="tabs-panel" id="i18n"><h4>i18n</h4></div><div class="tabs-panel" id="i18n-en"><h4>en.json</h4></div><div class="tabs-panel" id="middlewares"><h4>Middlewares</h4></div><div class="tabs-panel" id="middlewares-log"><h4>LogMiddleware</h4></div><div class="tabs-panel" id="models"><h4>Models</h4></div><div class="tabs-panel" id="models-user"><h4>UserModel</h4></div><div class="tabs-panel" id="models-users"><h4>UserModel</h4></div><div class="tabs-panel" id="services"><h4>Services</h4></div><div class="tabs-panel" id="services-users"><h4>UsersService</h4></div><div class="tabs-panel" id="views"><h4>Views</h4></div><div class="tabs-panel" id="views-error"><h4>error.pug</h4></div><div class="tabs-panel" id="views-index"><h4>index.pug</h4></div><div class="tabs-panel" id="views-layout"><h4>layout.pug</h4></div><div class="tabs-panel" id="config"><h4>Config</h4></div><div class="tabs-panel" id="config-scaffold"><h4>Scaffold</h4></div><div class="tabs-panel" id="config-scaffold-controller"><h4>Scaffold controller</h4></div><div class="tabs-panel" id="config-scaffold-controllerApi"><h4>Scaffold controllerApi</h4></div><div class="tabs-panel" id="config-scaffold-middleware"><h4>Scaffold middleware</h4></div><div class="tabs-panel" id="config-scaffold-model"><h4>Scaffold model</h4></div><div class="tabs-panel" id="config-scaffold-service"><h4>Scaffold service</h4></div><div class="tabs-panel" id="config-database"><h4>Database</h4></div><div class="tabs-panel" id="config-envs"><h4>Envs</h4></div><div class="tabs-panel" id="config-routes"><h4>Routes</h4></div><div class="tabs-panel" id="public"><h4>Public</h4></div><div class="tabs-panel" id="public-stylesheets"><h4>Public stylesheets</h4></div><div class="tabs-panel" id="public-stylesheets-style"><h4>style.css</h4></div><div class="tabs-panel" id="test"><h4>test</h4></div><div class="tabs-panel" id="integration"><h4>integration</h4></div><div class="tabs-panel" id="integration-user"><h4>integration user.test.js</h4></div><div class="tabs-panel" id="unit"><h4>unit</h4></div><div class="tabs-panel" id="unit-user"><h4>unit user.test.js</h4></div><div class="tabs-panel" id="editorconfig"><h4>.editorconfig</h4></div><div class="tabs-panel" id="gitignore"><h4>.gitignore</h4></div><div class="tabs-panel" id="index"><h4>index.js</h4></div><div class="tabs-panel" id="readme"><h4>README.md</h4></div><div class="tabs-panel" id="yarn"><h4>yarn.lock</h4></div></div></div></div></div></div><footer><p class="footer_text">Copyright © 2017 Apogeu and other contributors.</p><div class="footer__images"><a href="https://github.com/apogeu/apogeu"><img src="/assets/images/github.png"/></a></div></footer><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js"></script><script src="/assets/javascripts/vendor/highlight.js"></script><script src="/assets/javascripts/main.js"></script><script src="/assets/javascripts/structure.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+--><link href="/assets/stylesheets/main.css" rel="stylesheet"/><link href="/assets/stylesheets/vendor/highlight.css" rel="stylesheet"/></head><body><ul class="dropdown menu navbar align-right" data-dropdown-menu="data-dropdown-menu"><li class="float-left"><a class="menu-logo__link" href="/"><img class="menu-logo__img" src="/assets/images/apogeu-white.jpg"/></a></li><li><a href="#">Documentation</a><ul class="menu"><li><a href="/concepts">Concepts</a></li><li><a href="/structure">App structure</a></li><li><a href="/technology">Technology</a></li></ul></li><li><a href="/get-started">Get Started</a></li></ul><div class="row container"><div class="small-11 large-centered columns"><div class="structure"><div class="menu-centered"><ul class="menu"><li><a href="/concepts">Concepts</a></li><li class="active"><a href="/structure">App structure</a></li><li><a href="/technology">Technology</a></li></ul></div><div class="row"><div class="medium-3 columns"><ul class="vertical menu" id="menu-structure" data-accordion-menu="data-accordion-menu" data-multi-open="false"><li><a href="#app">app</a><ul class="menu vertical nested"><li><a href="#assets">assets</a><ul class="menu vertical nested"><li><a href="#images">images</a><ul class="menu vertical nested"><li><a href="#gitkeep">.gitkeep</a></li></ul></li><li><a href="#javascripts">javascripts</a><ul class="menu vertical nested"><li><a href="#gitkeep">.gitkeep</a></li></ul></li><li><a href="#stylesheets">stylesheets</a><ul class="menu vertical nested"><li><a href="#stylesheets-style">style.styl</a></li></ul></li></ul></li><li><a href="#controllers">controllers</a><ul class="menu vertical nested"><li><a href="#controllers-homepages">homepages.js</a></li><li><a href="#controllers-users">users.js</a></li></ul></li><li><a href="#i18n">i18n</a><ul class="menu vertical nested"><li><a href="#i18n-en">en.json</a></li></ul></li><li><a href="#middlewares">middlewares</a><ul class="menu vertical nested"><li><a href="#middlewares-log">log.js</a></li></ul></li><li><a href="#models">models</a><ul class="menu vertical nested"><li><a href="#models-user">user.js</a></li></ul></li><li><a href="#services">services</a><ul class="menu vertical nested"><li><a href="#services-users">users.js</a></li></ul></li><li><a href="#views">views</a><ul class="menu vertical nested"><li><a href="#views-error">error.pug</a></li><li><a href="#views-index">index.pug</a></li><li><a href="#views-layout">layout.pug</a></li></ul></li></ul></li><li><a href="#config">config</a><ul class="menu vertical nested"><li><a href="#config-scaffold">scaffold</a><ul class="menu vertical nested"><li><a href="#config-scaffold-controller">controller</a></li><li><a href="#config-scaffold-controllerCrud">controllerCrud</a></li><li><a href="#config-scaffold-middleware">middleware</a></li><li><a href="#config-scaffold-model">model</a></li><li><a href="#config-scaffold-service">service</a></li></ul></li><li><a href="#config-database">database.js</a></li><li><a href="#config-envs">envs.js</a></li><li><a href="#config-routes">routes.js</a></li></ul></li><li><a href="#public">public</a><ul class="menu vertical nested"><li><a href="#public-stylesheets">stylesheets</a><ul class="menu vertical nested"><li><a href="#public-stylesheets-style">style.css</a></li></ul></li></ul></li><li><a href="#test">test</a><ul class="menu vertical nested"><li><a href="#integration">integration</a><ul class="menu vertical nested"><li><a href="#integration-user">user.test.js</a></li></ul></li><li><a href="#unit">unit</a><ul class="menu vertical nested"><li><a href="#unit-user">user.test.js</a></li></ul></li></ul></li><li><a href="#editorconfig">.editorconfig</a></li><li><a href="#gitignore">.gitignore</a></li><li><a href="#index">index.js</a></li><li><a href="#package">package.json</a></li><li><a href="#readme">README.md</a></li><li><a href="#yarn">yarn.lock</a></li></ul></div><div class="medium-9 columns"><div class="tabs-panel" id="gitkeep"><h4>gitkeep</h4></div><div class="tabs-panel" id="app"><h4>App</h4></div><div class="tabs-panel" id="assets"><h4>Assets</h4></div><div class="tabs-panel" id="images"><h4>Images</h4></div><div class="tabs-panel" id="javascripts"><h4>JavaScripts</h4></div><div class="tabs-panel" id="stylesheets"><h4>Stylesheets</h4></div><div class="tabs-panel" id="stylesheets-style"><h4>style.styl</h4></div><div class="tabs-panel" id="controllers"><h4>Controllers</h4></div><div class="tabs-panel" id="controllers-homepages"><h4>HomepagesController</h4></div><div class="tabs-panel" id="controllers-users"><h4>UsersController</h4></div><div class="tabs-panel" id="i18n"><h4>i18n</h4></div><div class="tabs-panel" id="i18n-en"><h4>en.json</h4></div><div class="tabs-panel" id="middlewares"><h4>Middlewares</h4></div><div class="tabs-panel" id="middlewares-log"><h4>LogMiddleware</h4></div><div class="tabs-panel" id="models"><h4>Models</h4></div><div class="tabs-panel" id="models-user"><h4>UserModel</h4></div><div class="tabs-panel" id="models-users"><h4>UserModel</h4></div><div class="tabs-panel" id="services"><h4>Services</h4></div><div class="tabs-panel" id="services-users"><h4>UsersService</h4></div><div class="tabs-panel" id="views"><h4>Views</h4></div><div class="tabs-panel" id="views-error"><h4>error.pug</h4></div><div class="tabs-panel" id="views-index"><h4>index.pug</h4></div><div class="tabs-panel" id="views-layout"><h4>layout.pug</h4></div><div class="tabs-panel" id="config"><h4>Config</h4><p>Directory where all config files are located</p></div><div class="tabs-panel" id="config-scaffold"><h4>Scaffold</h4><p>Directory where all scaffold files are located</p><a href="/concepts/#scaffold" target="_blank">See more at here</a></div><div class="tabs-panel" id="config-scaffold-controller"><h4>Scaffold controller</h4><p>Scaffold to create a new controller</p><a href="/concepts/#scaffold" target="_blank">See more at here</a><pre><code class="javascript">const {{model}}Controller = {
+
+  index: (req, res) => {
+    res.send('{{model}}Controller');
+  },
+
+};
+
+module.exports = {{model}}Controller;</code></pre></div><div class="tabs-panel" id="config-scaffold-controllerCrud"><h4>Scaffold controllerCrud</h4><p>Scaffold to create a new controller crud</p><a href="/concepts/#scaffold" target="_blank">See more at here</a><pre><code class="javascript">const {{model}}Controller = {
+
+  list: (req, res, next) => {
+    {{model}}Service
+      .list(req.query)
+      .then(data => res.status(200).json({ success: true, data }))
+      .catch(next);
+  },
+
+  create: (req, res, next) => {
+    {{model}}Service
+      .create(req.body)
+      .then(data => res.status(200).json({ success: true, data }))
+      .catch(next);
+  },
+
+  findById: (req, res, next) => {
+    {{model}}Service
+      .findById(req.params.id)
+      .then(data => res.status(200).json({ success: true, data }))
+      .catch(next);
+  },
+
+  update: (req, res, next) => {
+    {{model}}Service
+      .update(req.params.id, req.body)
+      .then(data => res.status(200).json({ success: true, data }))
+      .catch(next);
+  },
+
+  delete: (req, res, next) => {
+    {{model}}Service
+      .delete(req.params.id)
+      .then(() => res.status(200).json({ success: true }))
+      .catch(next);
+  },
+
+};
+
+module.exports = {{model}}Controller;</code></pre></div><div class="tabs-panel" id="config-scaffold-middleware"><h4>Scaffold middleware</h4><p>Scaffold to create a new middleware</p><a href="/concepts/#scaffold" target="_blank">See more at here</a><pre><code class="javascript">const {{model}}Middleware = (req, res, next) => {
+  next();
+};
+
+module.exports = {{model}}Middleware;</code></pre></div><div class="tabs-panel" id="config-scaffold-model"><h4>Scaffold model</h4><p>Scaffold to create a new model</p><a href="/concepts/#scaffold" target="_blank">See more at here</a><pre><code class="javascript">const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
+
+const {{model}}Model = new Schema({
+
+});
+
+module.exports = mongoose.model('{{model}}', {{model}}Model);</code></pre></div><div class="tabs-panel" id="config-scaffold-service"><h4>Scaffold service</h4><p>Scaffold to create a new service</p><a href="/concepts/#scaffold" target="_blank">See more at here</a><pre><code class="javascript">const {{model}}Service = {
+
+  index: () => new Promise((resolve, reject) => {
+  }),
+
+};
+
+module.exports = {{model}}Service;</code></pre></div><div class="tabs-panel" id="config-database"><h4>Database</h4><p>Here your database is defined. By default in Apogeu the database is <a href="https://www.mongodb.com" target="_blank">MongoDB</a> using the <a href="http://mongoosejs.com" target="_blank">Mongoose</a> module.</p><p>See default file:</p><pre><code class="javascript">const mongoose = require('mongoose');
+const log = require('winston');
+const mongooseTimestamps = require('mongoose-timestamp');
+
+const envs = require('./envs');
+
+const { timestamps, mongodb, node_env } = envs;
+
+log.debug(`mongoose timestamps: ${timestamps}`);
+
+mongoose.Promise = Promise;
+
+if (timestamps) mongoose.plugin(mongooseTimestamps);
+
+module.exports = () => new Promise((resolve, reject) => {
+  const debugMongoose = node_env !== 'production';
+  log.debug(`debug mongoose: ${debugMongoose}`);
+
+  mongoose.set('debug', debugMongoose);
+
+  mongoose.connect(mongodb);
+
+  mongoose.connection.on('connected', () => log.info(`Mongoose default connection open to ${mongodb}`));
+
+  mongoose.connection.on('error', err => reject(err));
+
+  mongoose.connection.on('disconnected', () => log.info('Mongoose default connection disconnected'));
+
+  mongoose.connection.once('open', () => {
+    resolve();
+    log.info('Mongoose default connection is open');
+  });
+
+  process.on('SIGINT', () => {
+    mongoose.connection.close(() => {
+      log.info('Mongoose default connection disconnected through app termination');
+      process.exit(0);
+    });
+  });
+});</code></pre></div><div class="tabs-panel" id="config-envs"><h4>Envs</h4><p>Here is where all environments are declared</p><h5>All possible environments:</h5><div class="table-scroll"><table><thead><tr><th>Name</th><th>Type</th><th>Default value</th><th>Description</th></tr></thead><tbody><tr><td>node_env</td><td>String</td><td>development</td><td>The environment definition of your application. Possible values: development | test | production.</td></tr><tr><td>timestamps</td><td>Boolean</td><td>true</td><td>Enable ou disable the mongoose timestamps. See more in <a href="https://www.npmjs.com/package/mongoose-timestamp" target="_blank">mongoose-timestamp</a>. Possible values: true | false.</td></tr><tr><td>mongodb</td><td>String</td><td>mongodb://localhost:27017/apogeu</td><td>Mongoose uri connection. See more in <a href="http://mongoosejs.com/docs/connections.html">mongoose connections</a>.</td></tr><tr><td>port</td><td>Number</td><td>3000</td><td>Port setting for your application.</td></tr><tr><td>logger</td><td>String</td><td>dev</td><td>HTTP request logger middleware for node.js. See more in <a href="https://www.npmjs.com/package/morgan" target="_blank">morgan</a></td></tr><tr><td>cluster</td><td>Number</td><td>Number of your cpu</td><td>The cluster module allows you to easily create child processes that all share server ports. See more in <a href="https://nodejs.org/dist/latest-v7.x/docs/api/cluster.html" target="_blank">nodejs cluster</a></td></tr></tbody></table></div><p>See default file:</p><pre><code class="javascript">module.exports = {
+
+  node_env: 'development',
+
+  timestamps: true,
+
+  mongodb: 'mongodb://localhost:27017/apogeu',
+
+};</code></pre></div><div class="tabs-panel" id="config-routes"><h4>Routes</h4><p>Here is where all routes are declared</p><p>See default file:</p><pre><code class="javascript">// config/routes.js
+
+module.exports = {
+  'get /': HomepagesController.index,
+
+  'get /middleware': [LogMiddleware, HomepagesController.index],
+
+  '/users': [
+    {
+      method: 'get',
+      middlewares: [LogMiddleware],
+      controller: UsersController.list,
+    },
+    {
+      method: 'post',
+      controller: UsersController.create,
+    },
+  ],
+
+  '/users/:id': [
+    {
+      method: 'get',
+      controller: UsersController.findById,
+    },
+    {
+      method: 'put',
+      controller: UsersController.update,
+    },
+    {
+      method: 'delete',
+      controller: UsersController.delete,
+    },
+  ],
+
+};</code></pre></div><div class="tabs-panel" id="public"><h4>Public</h4><p>Directory where all public files are located</p></div><div class="tabs-panel" id="public-stylesheets"><h4>Stylesheets</h4><p>Directory where all css files are located</p></div><div class="tabs-panel" id="public-stylesheets-style"><h4>style.css</h4><pre><code class="css">body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00b7ff}</code></pre></div><div class="tabs-panel" id="test"><h4>test</h4><p>Directory where all tests are created</p></div><div class="tabs-panel" id="integration"><h4>integration</h4><p>Directory where all integration tests are created</p><p>A integration test can be executed with the <code>apogeu test integration</code> command:</p><pre><code class="bash">$ apogeu test integration</code></pre><p>Example output console:</p><pre><code class="bash">info: Mongoose default connection open to mongodb://localhost:27017/apogeu
+info: Mongoose default connection is open
+info: running integration tests
+info: Application listening on port 3000
+
+Mongoose: users.find({}, { limit: undefined, skip: undefined, fields: {} })
+  ✓ list users
+
+  1 passing (58ms)</code></pre></div><div class="tabs-panel" id="integration-user"><p>Example integration test:</p><pre><code class="javascript">const assert = require('assert');
+
+it('list users', (done) => {
+  UsersService.list()
+    .then((results) => {
+      assert.equal(Array.isArray(results), true);
+      done();
+    });
+});</code></pre></div><div class="tabs-panel" id="unit"><h4>unit</h4><p>Directory where all unit tests are created</p><p>A unit test can be executed with the <code>apogeu test unit</code> command:</p><pre><code class="bash">$ apogeu test unit</code></pre><p>Example output console:</p><pre><code class="bash">info: running unit tests
+
+✓ user service is an object
+
+1 passing (7ms)</code></pre></div><div class="tabs-panel" id="unit-user"><p>Example unit test:</p><pre><code class="javascript">const assert = require('assert');
+
+it('user service is an object', (done) => {
+  assert.equal(typeof UsersService, 'object');
+  done();
+});</code></pre></div><div class="tabs-panel" id="editorconfig"><h4><a href="http://editorconfig.org">.editorconfig</a></h4><p>EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs. The EditorConfig project consists of a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles.</p><p>EditorConfig files are easily readable and they work nicely with version control systems.</p><pre><code># EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.js]
+indent_style = space
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2</code></pre></div><div class="tabs-panel" id="gitignore"><h4><a href="https://git-scm.com/docs/gitignore">.gitignore</a></h4><p>A gitignore file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected.</p><pre><code># Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs generated by jscoverage/JSCover
+lib-cov
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Typescript v1 declaration files
+typings/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+#IntelliJ
+.idea/
+*.iml</code></pre></div><div class="tabs-panel" id="index"><h4>index.js</h4><p>In Apogeu, <code>index.js</code> is invoked at initialization where it receives parameter <a href="http://expressjs.com/en/4x/api.html#app">app</a></p><pre><code class="javascript">/*
+*
+* The app object conventionally denotes the Express application
+*
+*/
+
+module.exports = (app) => {
+
+};</code></pre></div><div class="tabs-panel" id="package"><h4>package.json</h4><p>A package.json file affords you a lot of great things:</p><ul><li>It serves as documentation for what packages your project depends on.</li><li>It allows you to specify the versions of a package that your project can use using semantic versioning rules.</li><li>Makes your build reproducible which means that its way easier to share with other developers.</li></ul><p>See more in:</p><p><a href="https://docs.npmjs.com/getting-started/using-a-package.json" target="_blank">Using a package.json</a></p><p><a href="https://docs.npmjs.com/files/package.json" target="_blank">Specifics of npm's package.json handling</a></p><p>Default file:</p><pre><code class="json">{
+  "name": "handson-test",
+  "version": "0.0.0",
+  "description": "",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "mongoose": "^4.8.5",
+    "mongoose-timestamp": "^0.6.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^3.2.0",
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0"
+  }
+}</code></pre></div><div class="tabs-panel" id="readme"><h4><a href="https://help.github.com/articles/about-readmes/">README.md</a></h4><p>A README file, along with a repository license, contribution guidelines, and a code of conduct, helps you communicate expectations for and manage contributions to your project.</p></div><div class="tabs-panel" id="yarn"><h4><a href="https://yarnpkg.com">yarn.lock</a></h4><p>Yarn is a package manager for your code. It allows you to use and share code with other developers from around the world. Yarn does this quickly, securely, and reliably so you don’t ever have to worry.</p></div></div></div></div></div></div><footer><p class="footer_text">Copyright © 2017 Apogeu and other contributors.</p><div class="footer__images"><a href="https://github.com/apogeu/apogeu"><img src="/assets/images/github.png"/></a></div></footer><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js"></script><script src="/assets/javascripts/vendor/highlight.js"></script><script src="/assets/javascripts/main.js"></script><script src="/assets/javascripts/structure.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');

@@ -1,6 +1,139 @@
 <!DOCTYPE html(lang='en')><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags--><meta name="description" content=""/><meta name="author" content=""/><title>Apogeu | App structure</title><link type="image/x-icon" rel="shortcut icon" href="/assets/images/apogeu.ico"/><link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" rel="stylesheet"/><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries--><!--if lt IE 9script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
 script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
---><link href="/assets/stylesheets/main.css" rel="stylesheet"/><link href="/assets/stylesheets/vendor/highlight.css" rel="stylesheet"/></head><body><ul class="dropdown menu navbar align-right" data-dropdown-menu="data-dropdown-menu"><li class="float-left"><a class="menu-logo__link" href="/"><img class="menu-logo__img" src="/assets/images/apogeu-white.jpg"/></a></li><li><a href="#">Documentation</a><ul class="menu"><li><a href="/concepts">Concepts</a></li><li><a href="/structure">App structure</a></li><li><a href="/technology">Technology</a></li></ul></li><li><a href="/get-started">Get Started</a></li></ul><div class="row container"><div class="small-11 large-centered columns"><div class="structure"><div class="menu-centered"><ul class="menu"><li><a href="/concepts">Concepts</a></li><li class="active"><a href="/structure">App structure</a></li><li><a href="/technology">Technology</a></li></ul></div><div class="row"><div class="medium-3 columns"><ul class="vertical menu" id="menu-structure" data-accordion-menu="data-accordion-menu" data-multi-open="false"><li><a href="#app">app</a><ul class="menu vertical nested"><li><a href="#assets">assets</a><ul class="menu vertical nested"><li><a href="#images">images</a><ul class="menu vertical nested"><li><a href="#gitkeep">.gitkeep</a></li></ul></li><li><a href="#javascripts">javascripts</a><ul class="menu vertical nested"><li><a href="#gitkeep">.gitkeep</a></li></ul></li><li><a href="#stylesheets">stylesheets</a><ul class="menu vertical nested"><li><a href="#stylesheets-style">style.styl</a></li></ul></li></ul></li><li><a href="#controllers">controllers</a><ul class="menu vertical nested"><li><a href="#controllers-homepages">homepages.js</a></li><li><a href="#controllers-users">users.js</a></li></ul></li><li><a href="#i18n">i18n</a><ul class="menu vertical nested"><li><a href="#i18n-en">en.json</a></li></ul></li><li><a href="#middlewares">middlewares</a><ul class="menu vertical nested"><li><a href="#middlewares-log">log.js</a></li></ul></li><li><a href="#models">models</a><ul class="menu vertical nested"><li><a href="#models-user">user.js</a></li></ul></li><li><a href="#services">services</a><ul class="menu vertical nested"><li><a href="#services-users">users.js</a></li></ul></li><li><a href="#views">views</a><ul class="menu vertical nested"><li><a href="#views-error">error.pug</a></li><li><a href="#views-index">index.pug</a></li><li><a href="#views-layout">layout.pug</a></li></ul></li></ul></li><li><a href="#config">config</a><ul class="menu vertical nested"><li><a href="#config-scaffold">scaffold</a><ul class="menu vertical nested"><li><a href="#config-scaffold-controller">controller</a></li><li><a href="#config-scaffold-controllerCrud">controllerCrud</a></li><li><a href="#config-scaffold-middleware">middleware</a></li><li><a href="#config-scaffold-model">model</a></li><li><a href="#config-scaffold-service">service</a></li></ul></li><li><a href="#config-database">database.js</a></li><li><a href="#config-envs">envs.js</a></li><li><a href="#config-routes">routes.js</a></li></ul></li><li><a href="#public">public</a><ul class="menu vertical nested"><li><a href="#public-stylesheets">stylesheets</a><ul class="menu vertical nested"><li><a href="#public-stylesheets-style">style.css</a></li></ul></li></ul></li><li><a href="#test">test</a><ul class="menu vertical nested"><li><a href="#integration">integration</a><ul class="menu vertical nested"><li><a href="#integration-user">user.test.js</a></li></ul></li><li><a href="#unit">unit</a><ul class="menu vertical nested"><li><a href="#unit-user">user.test.js</a></li></ul></li></ul></li><li><a href="#editorconfig">.editorconfig</a></li><li><a href="#gitignore">.gitignore</a></li><li><a href="#index">index.js</a></li><li><a href="#package">package.json</a></li><li><a href="#readme">README.md</a></li><li><a href="#yarn">yarn.lock</a></li></ul></div><div class="medium-9 columns"><div class="tabs-panel" id="gitkeep"><h4>gitkeep</h4></div><div class="tabs-panel" id="app"><h4>App</h4></div><div class="tabs-panel" id="assets"><h4>Assets</h4></div><div class="tabs-panel" id="images"><h4>Images</h4></div><div class="tabs-panel" id="javascripts"><h4>JavaScripts</h4></div><div class="tabs-panel" id="stylesheets"><h4>Stylesheets</h4></div><div class="tabs-panel" id="stylesheets-style"><h4>style.styl</h4></div><div class="tabs-panel" id="controllers"><h4>Controllers</h4></div><div class="tabs-panel" id="controllers-homepages"><h4>HomepagesController</h4></div><div class="tabs-panel" id="controllers-users"><h4>UsersController</h4></div><div class="tabs-panel" id="i18n"><h4>i18n</h4></div><div class="tabs-panel" id="i18n-en"><h4>en.json</h4></div><div class="tabs-panel" id="middlewares"><h4>Middlewares</h4></div><div class="tabs-panel" id="middlewares-log"><h4>LogMiddleware</h4></div><div class="tabs-panel" id="models"><h4>Models</h4></div><div class="tabs-panel" id="models-user"><h4>UserModel</h4></div><div class="tabs-panel" id="models-users"><h4>UserModel</h4></div><div class="tabs-panel" id="services"><h4>Services</h4></div><div class="tabs-panel" id="services-users"><h4>UsersService</h4></div><div class="tabs-panel" id="views"><h4>Views</h4></div><div class="tabs-panel" id="views-error"><h4>error.pug</h4></div><div class="tabs-panel" id="views-index"><h4>index.pug</h4></div><div class="tabs-panel" id="views-layout"><h4>layout.pug</h4></div><div class="tabs-panel" id="config"><h4>Config</h4><p>Directory where all config files are located</p></div><div class="tabs-panel" id="config-scaffold"><h4>Scaffold</h4><p>Directory where all scaffold files are located</p><a href="/concepts/#scaffold" target="_blank">See more at here</a></div><div class="tabs-panel" id="config-scaffold-controller"><h4>Scaffold controller</h4><p>Scaffold to create a new controller</p><a href="/concepts/#scaffold" target="_blank">See more at here</a><pre><code class="javascript">const {{model}}Controller = {
+--><link href="/assets/stylesheets/main.css" rel="stylesheet"/><link href="/assets/stylesheets/vendor/highlight.css" rel="stylesheet"/></head><body><ul class="dropdown menu navbar align-right" data-dropdown-menu="data-dropdown-menu"><li class="float-left"><a class="menu-logo__link" href="/"><img class="menu-logo__img" src="/assets/images/apogeu-white.jpg"/></a></li><li><a href="#">Documentation</a><ul class="menu"><li><a href="/concepts">Concepts</a></li><li><a href="/structure">App structure</a></li><li><a href="/technology">Technology</a></li></ul></li><li><a href="/get-started">Get Started</a></li></ul><div class="row container"><div class="small-11 large-centered columns"><div class="structure"><div class="menu-centered"><ul class="menu"><li><a href="/concepts">Concepts</a></li><li class="active"><a href="/structure">App structure</a></li><li><a href="/technology">Technology</a></li></ul></div><div class="row"><div class="medium-3 columns"><ul class="vertical menu" id="menu-structure" data-accordion-menu="data-accordion-menu" data-multi-open="false"><li><a href="#app">app</a><ul class="menu vertical nested"><li><a href="#assets">assets</a><ul class="menu vertical nested"><li><a href="#images">images</a><ul class="menu vertical nested"><li><a href="#gitkeep">.gitkeep</a></li></ul></li><li><a href="#javascripts">javascripts</a><ul class="menu vertical nested"><li><a href="#gitkeep">.gitkeep</a></li></ul></li><li><a href="#stylesheets">stylesheets</a><ul class="menu vertical nested"><li><a href="#stylesheets-style">style.styl</a></li></ul></li></ul></li><li><a href="#controllers">controllers</a><ul class="menu vertical nested"><li><a href="#controllers-homepages">homepages.js</a></li><li><a href="#controllers-users">users.js</a></li></ul></li><li><a href="#i18n">i18n</a><ul class="menu vertical nested"><li><a href="#i18n-en">en.json</a></li></ul></li><li><a href="#middlewares">middlewares</a><ul class="menu vertical nested"><li><a href="#middlewares-log">log.js</a></li></ul></li><li><a href="#models">models</a><ul class="menu vertical nested"><li><a href="#models-user">user.js</a></li></ul></li><li><a href="#services">services</a><ul class="menu vertical nested"><li><a href="#services-users">users.js</a></li></ul></li><li><a href="#views">views</a><ul class="menu vertical nested"><li><a href="#views-error">error.pug</a></li><li><a href="#views-index">index.pug</a></li><li><a href="#views-layout">layout.pug</a></li></ul></li></ul></li><li><a href="#config">config</a><ul class="menu vertical nested"><li><a href="#config-scaffold">scaffold</a><ul class="menu vertical nested"><li><a href="#config-scaffold-controller">controller</a></li><li><a href="#config-scaffold-controllerCrud">controllerCrud</a></li><li><a href="#config-scaffold-middleware">middleware</a></li><li><a href="#config-scaffold-model">model</a></li><li><a href="#config-scaffold-service">service</a></li></ul></li><li><a href="#config-database">database.js</a></li><li><a href="#config-envs">envs.js</a></li><li><a href="#config-routes">routes.js</a></li></ul></li><li><a href="#public">public</a><ul class="menu vertical nested"><li><a href="#public-stylesheets">stylesheets</a><ul class="menu vertical nested"><li><a href="#public-stylesheets-style">style.css</a></li></ul></li></ul></li><li><a href="#test">test</a><ul class="menu vertical nested"><li><a href="#integration">integration</a><ul class="menu vertical nested"><li><a href="#integration-user">user.test.js</a></li></ul></li><li><a href="#unit">unit</a><ul class="menu vertical nested"><li><a href="#unit-user">user.test.js</a></li></ul></li></ul></li><li><a href="#editorconfig">.editorconfig</a></li><li><a href="#gitignore">.gitignore</a></li><li><a href="#index">index.js</a></li><li><a href="#package">package.json</a></li><li><a href="#readme">README.md</a></li><li><a href="#yarn">yarn.lock</a></li></ul></div><div class="medium-9 columns"><div class="tabs-panel" id="gitkeep"><h4>gitkeep</h4><p>Git does not track empty directory. In order to track a directory, a file must exist within it. The trick that many people use is to create a hidden file usually called .gitkeep. The name of the file does not matter. As long as there is a file in the directory .gitkeep, readme.txt etc, git will track directory.</p></div><div class="tabs-panel" id="app"><h4>App</h4><p>One of the main directories. Here you will find all the development structures of your application.</p></div><div class="tabs-panel" id="assets"><h4>Assets</h4><p>Directory where all assets files are located.</p></div><div class="tabs-panel" id="images"><h4>Images</h4><p>Directory where all images are located.</p></div><div class="tabs-panel" id="javascripts"><h4>JavaScripts</h4><p>Directory where all JavaScript files are located.</p></div><div class="tabs-panel" id="stylesheets"><h4>Stylesheets</h4><p>Directory where all Stylus files are located.</p></div><div class="tabs-panel" id="stylesheets-style"><h4>style.styl</h4><p>Stylus file example.</p><pre><code class="styl">body
+  padding 50px
+  font 14px "Lucida Grande", Helvetica, Arial, sans-serif
+
+a
+  color #00B7FF</code></pre></div><div class="tabs-panel" id="controllers"><h4>Controllers</h4><p>Directory where all controllers files are located.</p></div><div class="tabs-panel" id="controllers-homepages"><h4>HomepagesController</h4><p>Controller file example rendering a view.</p><a href="/concepts/#controllers" target="_blank">See more at here</a><pre><code class="javascript">const HomepagesController = {
+
+  index: (req, res) => {
+    res.render('index', { title: 'Apogeu' });
+  },
+
+};
+
+module.exports = HomepagesController;</code></pre></div><div class="tabs-panel" id="controllers-users"><h4>UsersController</h4><p>Controller file example CRUD api.</p><a href="/concepts/#controllers" target="_blank">See more at here</a><pre><code class="javascript">const UsersController = {
+
+  list: (req, res, next) => {
+    UsersService
+      .list(req.query)
+      .then(data => res.status(200).json({ success: true, data }))
+      .catch(next);
+  },
+
+  create: (req, res, next) => {
+    UsersService
+      .create(req.body)
+      .then(data => res.status(200).json({ success: true, data }))
+      .catch(next);
+  },
+
+  findById: (req, res, next) => {
+    UsersService
+      .findById(req.params.id)
+      .then(data => res.status(200).json({ success: true, data }))
+      .catch(next);
+  },
+
+  update: (req, res, next) => {
+    UsersService
+      .update(req.params.id, req.body)
+      .then(data => res.status(200).json({ success: true, data }))
+      .catch(next);
+  },
+
+  delete: (req, res, next) => {
+    UsersService
+      .delete(req.params.id)
+      .then(() => res.status(200).json({ success: true }))
+      .catch(next);
+  },
+
+};
+
+module.exports = UsersController;</code></pre></div><div class="tabs-panel" id="i18n"><h4>i18n</h4><p>Directory where all translation files are located.</p></div><div class="tabs-panel" id="i18n-en"><h4>en.json</h4><p>Translation file example.</p><a href="https://www.npmjs.com/package/i18n" target="_blank">See more at here</a><pre><code class="json">{
+  "title": "Apogeu",
+  "welcome": "Welcome to Apogeu"
+}</code></pre></div><div class="tabs-panel" id="middlewares"><h4>Middlewares</h4><p>Directory where all middlewares files are located.</p></div><div class="tabs-panel" id="middlewares-log"><h4>LogMiddleware</h4><p>Middleware file example.</p><a href="/concepts/#middlewares" target="_blank">See more at here</a><pre><code class="javascript">const log = require('winston');
+
+const LogMiddleware = (req, res, next) => {
+  log.debug('log middleware');
+  next();
+};
+
+module.exports = LogMiddleware;</code></pre></div><div class="tabs-panel" id="models"><h4>Models</h4><p>Directory where all models files are located.</p></div><div class="tabs-panel" id="models-user"><h4>UserModel</h4><p>Model file example.</p><a href="/concepts/#models" target="_blank">See more at here</a><pre><code class="javascript">const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
+
+const UserModel = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+});
+
+module.exports = mongoose.model('User', UserModel);</code></pre></div><div class="tabs-panel" id="services"><h4>Services</h4><p>Directory where all services files are located.</p></div><div class="tabs-panel" id="services-users"><h4>UsersService</h4><p>Service file example CRUD.</p><a href="/concepts/#services" target="_blank">See more at here</a><pre><code class="javascript">const UsersService = {
+
+  list: (query = {}) => {
+    const { limit, skip, sort } = query;
+    return UserModel
+      .find({})
+      .limit(limit)
+      .skip(skip)
+      .sort(sort);
+  },
+
+  create: (body = {}) => {
+    const model = new UserModel(body);
+    return model.save();
+  },
+
+  findById: _id => new Promise((resolve, reject) => {
+    UserModel
+      .findOne({ _id })
+      .then((data) => {
+        if (!data) return reject({ success: false, message: 'Not found', status: 404 });
+        resolve(data);
+      })
+      .catch(reject);
+  }),
+
+  update: (_id, body) => new Promise((resolve, reject) => {
+    UsersService.findById(_id)
+      .then((user) => {
+        Object.assign(user, body);
+        user.save().then(resolve).catch(reject);
+      })
+      .catch(reject);
+  }),
+
+  delete: _id => new Promise((resolve, reject) => {
+    UsersService.findById(_id)
+      .then((user) => {
+        user.remove().then(resolve).catch(reject);
+      })
+      .catch(reject);
+  }),
+
+};
+
+module.exports = UsersService;</code></pre></div><div class="tabs-panel" id="views"><h4>Views</h4><p>Directory where all views (pug) files are located.</p></div><div class="tabs-panel" id="views-error"><h4>error.pug</h4><p>Error page example.</p><a href="/concepts/#views" target="_blank">See more at here</a><pre><code class="pug">extends layout
+
+block content
+  h1= message
+  h2= error.status
+  pre #{error.stack}</code></pre></div><div class="tabs-panel" id="views-index"><h4>index.pug</h4><p>Index page example.</p><a href="/concepts/#views" target="_blank">See more at here</a><pre><code class="pug">extends layout
+
+block content
+ h1= __('title')
+ p= __('welcome')</code></pre></div><div class="tabs-panel" id="views-layout"><h4>layout.pug</h4><p>Layout example.</p><a href="/concepts/#views" target="_blank">See more at here</a><pre><code class="pug">doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/public/stylesheets/style.css')
+  body
+    block content</code></pre></div><div class="tabs-panel" id="config"><h4>Config</h4><p>Directory where all config files are located</p></div><div class="tabs-panel" id="config-scaffold"><h4>Scaffold</h4><p>Directory where all scaffold files are located</p><a href="/concepts/#scaffold" target="_blank">See more at here</a></div><div class="tabs-panel" id="config-scaffold-controller"><h4>Scaffold controller</h4><p>Scaffold to create a new controller</p><a href="/concepts/#scaffold" target="_blank">See more at here</a><pre><code class="javascript">const {{model}}Controller = {
 
   index: (req, res) => {
     res.send('{{model}}Controller');
@@ -147,7 +280,7 @@ module.exports = {
     },
   ],
 
-};</code></pre></div><div class="tabs-panel" id="public"><h4>Public</h4><p>Directory where all public files are located</p></div><div class="tabs-panel" id="public-stylesheets"><h4>Stylesheets</h4><p>Directory where all css files are located</p></div><div class="tabs-panel" id="public-stylesheets-style"><h4>style.css</h4><pre><code class="css">body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00b7ff}</code></pre></div><div class="tabs-panel" id="test"><h4>test</h4><p>Directory where all tests are created</p></div><div class="tabs-panel" id="integration"><h4>integration</h4><p>Directory where all integration tests are created</p><p>A integration test can be executed with the <code>apogeu test integration</code> command:</p><pre><code class="bash">$ apogeu test integration</code></pre><p>Example output console:</p><pre><code class="bash">info: Mongoose default connection open to mongodb://localhost:27017/apogeu
+};</code></pre></div><div class="tabs-panel" id="public"><h4>Public</h4><p>Directory where all public files are located</p></div><div class="tabs-panel" id="public-stylesheets"><h4>Stylesheets</h4><p>Directory where all css files are located.</p><b>All Stylus files are compiled to this location.</b></div><div class="tabs-panel" id="public-stylesheets-style"><h4>style.css</h4><pre><code class="css">body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00b7ff}</code></pre></div><div class="tabs-panel" id="test"><h4>test</h4><p>Directory where all tests are created</p></div><div class="tabs-panel" id="integration"><h4>integration</h4><p>Directory where all integration tests are created</p><p>A integration test can be executed with the <code>apogeu test integration</code> command:</p><pre><code class="bash">$ apogeu test integration</code></pre><p>Example output console:</p><pre><code class="bash">info: Mongoose default connection open to mongodb://localhost:27017/apogeu
 info: Mongoose default connection is open
 info: running integration tests
 info: Application listening on port 3000

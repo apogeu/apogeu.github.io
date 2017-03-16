@@ -175,7 +175,7 @@ block content
                     #models.tabs-panel
                         h4 Models
                         p A model module fulfills the #[b M] in the #[a(href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller") Model View Controller] (#[b M]VC) pattern and represents a persistent entity that is mapped onto an underlying database. In #{ apogeu } a model is a module with a plural name convention and lives in the #[code app/models] directory.
-                        p Models don't need to be required, just use #[code UserModel] wherever you want.
+                        b Models don't need to be required, just use #[code UserModel] wherever you want.
                         p A model can be created with the #[code apogeu model model_name] command:
                         pre
                             code.bash $ apogeu create model user
@@ -192,7 +192,7 @@ block content
                     #services.tabs-panel
                         h4 Services
                         p A service contains business logic that can be reused across a #{ apogeu } application. In #{ apogeu }, a service is a module with a plural name that ends in the "Service" convention and lives in the #[code app/services] directory.
-                        p Services don't need to be required, just use #[code UsersService] wherever you want.
+                        b Services don't need to be required, just use #[code UsersService] wherever you want.
                         p A service can be created with the #[code apogeu create service model_name] command:
                         pre
                             code.bash $ apogeu create service user
@@ -206,7 +206,7 @@ block content
                     #controllers.tabs-panel
                         h4 Controllers
                         p A controller fulfills the #[b C] in the #[a(href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller") Model View Controller] (MV#[b C]) pattern and is responsible for handling web requests. In #{ apogeu }, a service is a module with a plural name that ends in the "Controller" convention and lives in the #[code app/controllers] directory.
-                        p Controllers don't need to be required, just use #[code UsersController] wherever you want.
+                        b Controllers don't need to be required, just use #[code UsersController] wherever you want.
                         p A controller can be created with the  #[code apogeu create controller model_name] command:
                         pre
                             code.bash $ apogeu create controller user
@@ -220,7 +220,7 @@ block content
                     #middlewares.tabs-panel
                         h4 Middlewares
                         p #[a(href="http://expressjs.com/en/guide/writing-middleware.html") Middleware] functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. In #{ apogeu }, a service is a module with a singular name that ends in the "Middleware" convention and lives in the #[code app/middlewares] directory.
-                        p Middlewares don't need to be required, just use #[code LogMiddleware] wherever you want.
+                        b Middlewares don't need to be required, just use #[code LogMiddleware] wherever you want.
                         p A middleware can be created with the #[code apogeu create middleware log] command:
                         pre
                             code.bash $ apogeu create middleware log

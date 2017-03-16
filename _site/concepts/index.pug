@@ -18,6 +18,8 @@ block content
             .medium-3.columns
                 ul#concepts-tabs.tabs.vertical(data-tabs data-deep-link="true")
                     li.tabs-title.is-active
+                        a(href="#cli") Command Line Interface
+                    li.tabs-title
                         a(href="#models") Models
                     li.tabs-title
                         a(href="#services") Services
@@ -36,7 +38,141 @@ block content
 
             .medium-9.columns
                 .tabs-content.vertical(data-tabs-content="concepts-tabs")
-                    #models.tabs-panel.is-active
+                    #cli.tabs-panel.is-active
+                        h4 Command Line Interface (CLI)
+                        p In #{ apogeu }, all commands have the syntax with #[code apogeu command]
+                        p Example:
+                        pre
+                            code.bash
+                                | $ apogeu new my-project
+
+                        p Display the command options with the -h option:
+                        pre
+                            code.bash
+                                | $ apogeu -h
+                                |
+                                |Commands:
+                                |  start                                                                 Start project
+                                |  new [project_name]                                                    New project
+                                |  create <type> [all|middleware|controller|service|model] <model_name>  Create model structure
+                                |  test [test_type] [all|unit|integration]                               Run project tests
+                                |
+                                |Options:
+                                |  --version, -v  Show version number  [boolean]
+                                |  --help, -h     Show help  [boolean]
+                        
+                        hr
+        
+                        h5 Available Commands
+
+                        ul.accordion(data-accordion data-allow-all-closed="true")
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") apogeu start
+                                .accordion-content(data-tab-content)
+                                    p This command starts your application
+                                    p You can simply run:
+                                    pre
+                                        code.bash
+                                            |$ apogeu start
+                                            |
+                                            | info: Mongoose default connection open to mongodb://localhost:27017/apogeu
+                                            | info: Mongoose default connection is open
+                                            | info: Application listening on port 3000
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") apogeu new
+                                .accordion-content(data-tab-content)
+                                    p For you to create a new application:
+                                    pre
+                                        code.bash
+                                            |$ apogeu new my-project
+                                            |
+                                            | info: my-project app created
+                                    p Or for you to create in the current folder
+                                    pre
+                                        code.bash
+                                            |$ apogeu new
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") apogeu create
+                                .accordion-content(data-tab-content)
+                                    p To create a model, service, controller or middleware, the #[code apogeu create] command is used.
+                                    pre
+                                        code.bash
+                                            |$ apogeu create model user
+                                            |
+                                            | info: User structure created
+                                    p You can also create all structures using #[code apogeu create all name]
+                                    pre
+                                        code.bash
+                                            |$ apogeu create all user
+                                            |
+                                            | info: User structure created
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") apogeu test
+                                .accordion-content(data-tab-content)
+                                    p To run the unit and/or integration tests, use the command #[code apogeu test]
+                                    pre
+                                        code.bash
+                                            |$ apogeu test unit
+                                            |
+                                            |info: running unit tests
+                                            |
+                                            |  ✓ user service is an object
+                                            |
+                                            |  1 passing (7ms)
+                                    p You can also create all tests using #[code apogeu test all]
+                                    pre
+                                        code.bash
+                                            |$ apogeu test all
+                                            |
+                                            |info: Mongoose default connection open to mongodb://localhost:27017/apogeu
+                                            |info: Mongoose default connection is open
+                                            |info: running unit tests
+                                            |
+                                            |  ✓ user service is an object
+                                            |
+                                            |  1 passing (15ms)
+                                            |
+                                            |info: running integration tests
+                                            |info: Application listening on port 3000
+                                            |
+                                            |Mongoose: users.find({}, { limit: undefined, skip: undefined, fields: {} })
+                                            |  ✓ list users (438ms)
+                                            |
+                                            |  1 passing (443ms)
+                            li.accordion-item(data-accordion-item)
+                                a.accordion-title(href="#") apogeu <command> --debug
+                                .accordion-content(data-tab-content)
+                                    p Use the #[code --debug] option to display the entire process of some command.
+                                    p Example with the new command:
+                                    pre
+                                        code.bash
+                                            |$ apogeu new my-project --debug
+                                            |
+                                            |apogeu:apogeu init apogeu +0ms
+                                            |apogeu:debug global.Promise = require("bluebird") +204ms
+                                            |apogeu:new project name: my-project +3s
+                                            |apogeu:createDir my-project +14ms
+                                            |apogeu:download downloading sources +45ms
+                                            |apogeu:createDir my-project/app/assets/images +2s
+                                            |apogeu:createDir my-project/app/assets/javascripts +19ms
+                                            |apogeu:createDir my-project/app/assets/stylesheets +3ms
+                                            |apogeu:createDir my-project/app/controllers +4ms
+                                            |apogeu:createDir my-project/app/i18n +7ms
+                                            |apogeu:createDir my-project/app/middlewares +2ms
+                                            |apogeu:createDir my-project/app/models +2ms
+                                            |apogeu:createDir my-project/app/services +3ms
+                                            |apogeu:createDir my-project/app/views +4ms
+                                            |apogeu:createDir my-project/config +6ms
+                                            |apogeu:createDir my-project/config/scaffold +91ms
+                                            |apogeu:createDir my-project/public/stylesheets +11ms
+                                            |apogeu:createDir my-project/test/integration +3ms
+                                            |apogeu:createDir my-project/test/unit +1ms
+                                            |apogeu:createPackage creating package file +272ms
+                                            |apogeu:installDependencies installing app dependencies +3ms
+                                            |apogeu:createDir my-project/node_modules +0ms
+                                            |apogeu:installDependencies dependencies installed +1m
+                                            |info: my-project app created
+                    #models.tabs-panel
                         h4 Models
                         p A model module fulfills the #[b M] in the #[a(href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller") Model View Controller] (#[b M]VC) pattern and represents a persistent entity that is mapped onto an underlying database. In #{ apogeu } a model is a module with a plural name convention and lives in the #[code app/models] directory.
                         p Models don't need to be required, just use #[code UserModel] wherever you want.
